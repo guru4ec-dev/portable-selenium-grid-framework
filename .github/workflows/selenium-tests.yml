@@ -21,7 +21,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: chrome-reports
-          path: target/
+          path: reports/
 
       - name: Stop Containers
         run: docker compose down
@@ -41,7 +41,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: firefox-reports
-          path: target/
+          path: reports/
 
       - name: Stop Containers
         run: docker compose down
