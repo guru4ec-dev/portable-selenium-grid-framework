@@ -3,36 +3,19 @@ name: Selenium Grid Tests
 on:
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ main ]
 
 jobs:
 
-  test:
+  chrome:
     runs-on: ubuntu-latest
-
     steps:
+      - uses: actions/checkout@v4
+      - run: docker-compose up --build chrome-tests
+      - run: docker-compose down
 
-      - name: Checkout Code
-        uses: actions/checkout@v4
-
-      - name: Set up Docker
-        uses: docker/setup-buildx-action@v3
-
-      - name: Start Selenium Grid & Run Tests
-        run: |
-          docker-compose up --build --abort-on-container-exit
-
-      - name: Copy Reports
-        run: |
-          mkdir reports
-          docker cp $(docker ps -aqf "name=chrome-tests"):/app/target reports || true
-
-      - name: Upload Reports
-        uses: actions/upload-artifact@v4
-        with:
-          name: test-reports
-          path: reports
-
-      - name: Stop Containers
-        run: docker-compose down
+  firefox:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: docker-compose up --build firefox-tests
+      - run: docker-compose down
