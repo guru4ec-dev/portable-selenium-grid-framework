@@ -41,7 +41,7 @@ services:
     build: .
     depends_on:
       - selenium-hub
-    command: mvn clean test -Dbrowser=chrome -Dheadless=true
+    command: mvn test -Dbrowser=chrome -Dheadless=true
     volumes:
       - ./reports:/app/target
 
@@ -49,6 +49,6 @@ services:
     build: .
     depends_on:
       - selenium-hub
-    command: mvn clean test -Dbrowser=firefox -Dheadless=true
+    command: mvn test -Dbrowser=firefox -Dheadless=true
     volumes:
       - ./reports:/app/target
