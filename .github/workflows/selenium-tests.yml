@@ -17,11 +17,11 @@ jobs:
       - name: Run Chrome Tests
         run: docker compose up --build chrome-tests
 
-      - name: Upload Reports
+      - name: Upload Chrome Reports
         uses: actions/upload-artifact@v4
         with:
           name: chrome-reports
-          path: target/surefire-reports/
+          path: target/
 
       - name: Stop Containers
         run: docker compose down
@@ -37,11 +37,11 @@ jobs:
       - name: Run Firefox Tests
         run: docker compose up --build firefox-tests
 
-      - name: Upload Reports
+      - name: Upload Firefox Reports
         uses: actions/upload-artifact@v4
         with:
           name: firefox-reports
-          path: target/surefire-reports/
+          path: target/
 
       - name: Stop Containers
         run: docker compose down
