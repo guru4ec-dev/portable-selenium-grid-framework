@@ -7,41 +7,41 @@ on:
 
 jobs:
 
- chrome:
-  runs-on: ubuntu-latest
+  chrome:
+    runs-on: ubuntu-latest
 
-  steps:
-    - uses: actions/checkout@v4
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
 
-    - name: Run Chrome Tests
-      run: docker compose up --build chrome-tests
+      - name: Run Chrome Tests
+        run: docker compose up --build chrome-tests
 
-    - name: Upload Surefire Reports
-      uses: actions/upload-artifact@v4
-      with:
-        name: chrome-reports
-        path: target/surefire-reports/
+      - name: Upload Reports
+        uses: actions/upload-artifact@v4
+        with:
+          name: chrome-reports
+          path: target/surefire-reports/
 
-    - name: Stop containers
-      run: docker compose down
-
+      - name: Stop Containers
+        run: docker compose down
 
 
   firefox:
-  runs-on: ubuntu-latest
+    runs-on: ubuntu-latest
 
-  steps:
-    - uses: actions/checkout@v4
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
 
-    - name: Run Firefox Tests
-      run: docker compose up --build firefox-tests
+      - name: Run Firefox Tests
+        run: docker compose up --build firefox-tests
 
-    - name: Upload Surefire Reports
-      uses: actions/upload-artifact@v4
-      with:
-        name: firefox-reports
-        path: target/surefire-reports/
+      - name: Upload Reports
+        uses: actions/upload-artifact@v4
+        with:
+          name: firefox-reports
+          path: target/surefire-reports/
 
-    - name: Stop containers
-      run: docker compose down
-
+      - name: Stop Containers
+        run: docker compose down
