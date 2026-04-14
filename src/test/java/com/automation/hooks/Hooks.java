@@ -21,7 +21,12 @@ public class Hooks {
     public void setUp() throws Exception {
 
         String browser = System.getProperty("browser", "chrome");
-        String gridUrl = System.getProperty("grid.url", "http://selenium-hub:4444");
+        String gridUrl = System.getProperty("grid.url");
+
+        if (gridUrl == null || gridUrl.isEmpty()) {
+            gridUrl = "http://localhost:4444";
+        }
+      
 
         if (browser.equalsIgnoreCase("firefox")) {
 
