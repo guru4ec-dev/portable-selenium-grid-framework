@@ -2,46 +2,44 @@ version: "3.8"
 
 services:
 
-  allure:
-    image: frankescobar/allure-docker-service
-    ports:
-      - "5050:5050"
-
   selenium-hub:
     image: selenium/hub:4.21.0
     container_name: selenium-hub
     ports:
+      - "4444:4444"
       - "4442:4442"
       - "4443:4443"
-      - "4444:4444"
 
   chrome:
     image: selenium/node-chrome:4.21.0
     container_name: chrome-node
     depends_on:
       - selenium-hub
-    shm_size: 2gb
     environment:
       - SE_EVENT_BUS_HOST=selenium-hub
       - SE_EVENT_BUS_PUBLISH_PORT=4442
       - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+    shm_size: 2gb
 
   firefox:
     image: selenium/node-firefox:4.21.0
     container_name: firefox-node
     depends_on:
       - selenium-hub
-    shm_size: 2gb
     environment:
       - SE_EVENT_BUS_HOST=selenium-hub
       - SE_EVENT_BUS_PUBLISH_PORT=4442
       - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+    shm_size: 2gb
 
   chrome-tests:
     build: .
     depends_on:
       - selenium-hub
-    command: mvn test -Dbrowser=chrome -Dheadless=true
+      - chrome
+    environment:
+      - GRID_URL=http://selenium-hub:4444
+    command: sh -c "sleep 15 && mvn test -Dbrowser=chrome -Dheadless=true"
     volumes:
       - ./reports:/app/target
 
@@ -49,6 +47,9 @@ services:
     build: .
     depends_on:
       - selenium-hub
-    command: mvn test -Dbrowser=firefox -Dheadless=true
+      - firefox
+    environment:
+      - GRID_URL=http://selenium-hub:4444
+    command: sh -c "sleep 15 && mvn test -Dbrowser=firefox -Dheadless=true"
     volumes:
       - ./reports:/app/target
