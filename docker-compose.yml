@@ -1,0 +1,38 @@
+version: "3"
+
+services:
+
+  selenium-hub:
+    image: selenium/hub:4.21.0
+    ports:
+      - "4444:4444"
+
+  chrome:
+    image: selenium/node-chrome:4.21.0
+    depends_on:
+      - selenium-hub
+    environment:
+      - SE_EVENT_BUS_HOST=selenium-hub
+
+  firefox:
+    image: selenium/node-firefox:4.21.0
+    depends_on:
+      - selenium-hub
+    environment:
+      - SE_EVENT_BUS_HOST=selenium-hub
+
+  chrome-tests:
+    build: .
+    depends_on:
+      - selenium-hub
+    command: mvn clean test -Dbrowser=chrome -Dheadless=true
+    volumes:
+      - ./reports:/app/target
+
+  firefox-tests:
+    build: .
+    depends_on:
+      - selenium-hub
+    command: mvn clean test -Dbrowser=firefox -Dheadless=true
+    volumes:
+      - ./reports:/app/target
