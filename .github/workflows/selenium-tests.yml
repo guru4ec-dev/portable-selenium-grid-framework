@@ -1,24 +1,47 @@
 name: Selenium Grid Tests
 
 on:
+  workflow_dispatch:
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ main ]
-  workflow_dispatch:
 
 jobs:
 
   chrome:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v4
-      - run: docker-compose up --build chrome-tests
-      - run: docker-compose down
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Install Docker Compose
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y docker compose
+
+      - name: Run Chrome Tests
+        run: |
+          docker compose up --build chrome-tests
+
+      - name: Stop Containers
+        run: docker compose down
+
 
   firefox:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v4
-      - run: docker-compose up --build firefox-tests
-      - run: docker-compose down
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Install Docker Compose
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y docker compose
+
+      - name: Run Firefox Tests
+        run: |
+          docker compose up --build firefox-tests
+
+      - name: Stop Containers
+        run: docker compose down
