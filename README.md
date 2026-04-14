@@ -1,52 +1,40 @@
-\# 🚀 Selenium Grid Automation Framework
+\# 🚀 Portable Selenium Grid Framework
 
 
 
-\## Prerequisite
+\## 🔥 Features
 
-Install Docker Desktop
+\- Selenium Grid (Docker)
+
+\- Cucumber + TestNG
+
+\- Parallel Execution
+
+\- Cross Browser Testing
+
+\- Jenkins Integration
 
 
 
-\## Run Project
+\---
+
+
+
+\## ⚡ One Command Run
+
+
+
+```bash
+
+git clone https://github.com/guru4ec-dev/portable-selenium-grid-framework.git
+
+cd portable-selenium-grid-framework
 
 docker-compose up --build
 
 
 
-\## Grid UI
 
-http://localhost:4444
-
-
-
-\## Reports
-
-Check /reports folder
-
-
-
-\## Stop
-
-docker-compose down
-
-
-
-
-
-Final Result
-
-
-
-✔ No Java install
-
-✔ No Maven install
-
-✔ No Grid setup
-
-✔ Cross-browser parallel
-
-✔ Jenkins compatible
-
-✔ Fully portable
+\-or improve run this
+docker-compose up --scale chrome=2 --scale firefox=2
 

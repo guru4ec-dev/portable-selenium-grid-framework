@@ -2,6 +2,11 @@ version: "3"
 
 services:
 
+  allure:
+  image: frankescobar/allure-docker-service
+  ports:
+    - "5050:5050"
+
   selenium-hub:
     image: selenium/hub:4.21.0
     ports:
@@ -9,6 +14,7 @@ services:
 
   chrome:
     image: selenium/node-chrome:4.21.0
+    container_name: chrome-node
     depends_on:
       - selenium-hub
     environment:
