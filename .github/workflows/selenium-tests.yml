@@ -17,6 +17,11 @@ jobs:
       - name: Run Chrome Tests
         run: docker compose up --build chrome-tests
 
+      - name: Debug Reports Folder
+        run: |
+          echo "Listing reports folder..."
+          ls -R reports || true
+
       - name: Upload Chrome Reports
         uses: actions/upload-artifact@v4
         with:
@@ -36,6 +41,11 @@ jobs:
 
       - name: Run Firefox Tests
         run: docker compose up --build firefox-tests
+
+      - name: Debug Reports Folder
+        run: |
+          echo "Listing reports folder..."
+          ls -R reports || true
 
       - name: Upload Firefox Reports
         uses: actions/upload-artifact@v4
