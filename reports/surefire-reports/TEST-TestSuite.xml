@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="TestSuite" time="324.423" tests="3" errors="0" skipped="0" failures="3">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="TestSuite" time="339.945" tests="3" errors="0" skipped="0" failures="3">
   <properties>
     <property name="java.specification.version" value="17"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
@@ -13,7 +13,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="US"/>
     <property name="sun.boot.library.path" value="/opt/java/openjdk/lib"/>
-    <property name="sun.java.command" value="/app/target/surefire/surefirebooter-20260415175606777_3.jar /app/target/surefire 2026-04-15T17-56-05_704-jvmRun1 surefire-20260415175606777_1tmp surefire_0-20260415175606777_2tmp"/>
+    <property name="sun.java.command" value="/app/target/surefire/surefirebooter-20260415191352031_3.jar /app/target/surefire 2026-04-15T19-13-51_510-jvmRun1 surefire-20260415191352031_1tmp surefire_0-20260415191352031_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="/app/target/test-classes:/app/target/classes:/root/.m2/repository/org/seleniumhq/selenium/selenium-java/4.21.0/selenium-java-4.21.0.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-api/4.21.0/selenium-api-4.21.0.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-chrome-driver/4.21.0/selenium-chrome-driver-4.21.0.jar:/root/.m2/repository/com/google/auto/service/auto-service-annotations/1.1.1/auto-service-annotations-1.1.1.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-chromium-driver/4.21.0/selenium-chromium-driver-4.21.0.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-json/4.21.0/selenium-json-4.21.0.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-manager/4.21.0/selenium-manager-4.21.0.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-devtools-v123/4.21.0/selenium-devtools-v123-4.21.0.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-devtools-v124/4.21.0/selenium-devtools-v124-4.21.0.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-devtools-v125/4.21.0/selenium-devtools-v125-4.21.0.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-devtools-v85/4.21.0/selenium-devtools-v85-4.21.0.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-edge-driver/4.21.0/selenium-edge-driver-4.21.0.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-firefox-driver/4.21.0/selenium-firefox-driver-4.21.0.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-http/4.21.0/selenium-http-4.21.0.jar:/root/.m2/repository/dev/failsafe/failsafe/3.3.2/failsafe-3.3.2.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-ie-driver/4.21.0/selenium-ie-driver-4.21.0.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-remote-driver/4.21.0/selenium-remote-driver-4.21.0.jar:/root/.m2/repository/com/google/guava/guava/33.2.0-jre/guava-33.2.0-jre.jar:/root/.m2/repository/com/google/guava/failureaccess/1.0.2/failureaccess-1.0.2.jar:/root/.m2/repository/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/root/.m2/repository/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar:/root/.m2/repository/org/checkerframework/checker-qual/3.42.0/checker-qual-3.42.0.jar:/root/.m2/repository/com/google/errorprone/error_prone_annotations/2.26.1/error_prone_annotations-2.26.1.jar:/root/.m2/repository/com/google/j2objc/j2objc-annotations/3.0.0/j2objc-annotations-3.0.0.jar:/root/.m2/repository/io/opentelemetry/semconv/opentelemetry-semconv/1.25.0-alpha/opentelemetry-semconv-1.25.0-alpha.jar:/root/.m2/repository/io/opentelemetry/opentelemetry-api/1.38.0/opentelemetry-api-1.38.0.jar:/root/.m2/repository/io/opentelemetry/opentelemetry-context/1.38.0/opentelemetry-context-1.38.0.jar:/root/.m2/repository/io/opentelemetry/opentelemetry-exporter-logging/1.38.0/opentelemetry-exporter-logging-1.38.0.jar:/root/.m2/repository/io/opentelemetry/opentelemetry-sdk-common/1.38.0/opentelemetry-sdk-common-1.38.0.jar:/root/.m2/repository/io/opentelemetry/opentelemetry-sdk-extension-autoconfigure-spi/1.38.0/opentelemetry-sdk-extension-autoconfigure-spi-1.38.0.jar:/root/.m2/repository/io/opentelemetry/opentelemetry-sdk-extension-autoconfigure/1.38.0/opentelemetry-sdk-extension-autoconfigure-1.38.0.jar:/root/.m2/repository/io/opentelemetry/opentelemetry-api-incubator/1.38.0-alpha/opentelemetry-api-incubator-1.38.0-alpha.jar:/root/.m2/repository/io/opentelemetry/opentelemetry-sdk-trace/1.38.0/opentelemetry-sdk-trace-1.38.0.jar:/root/.m2/repository/io/opentelemetry/opentelemetry-sdk/1.38.0/opentelemetry-sdk-1.38.0.jar:/root/.m2/repository/io/opentelemetry/opentelemetry-sdk-metrics/1.38.0/opentelemetry-sdk-metrics-1.38.0.jar:/root/.m2/repository/io/opentelemetry/opentelemetry-sdk-logs/1.38.0/opentelemetry-sdk-logs-1.38.0.jar:/root/.m2/repository/net/bytebuddy/byte-buddy/1.14.15/byte-buddy-1.14.15.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-os/4.21.0/selenium-os-4.21.0.jar:/root/.m2/repository/org/apache/commons/commons-exec/1.4.0/commons-exec-1.4.0.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-safari-driver/4.21.0/selenium-safari-driver-4.21.0.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-support/4.21.0/selenium-support-4.21.0.jar:/root/.m2/repository/org/testng/testng/7.9.0/testng-7.9.0.jar:/root/.m2/repository/org/slf4j/slf4j-api/1.7.36/slf4j-api-1.7.36.jar:/root/.m2/repository/com/beust/jcommander/1.82/jcommander-1.82.jar:/root/.m2/repository/org/webjars/jquery/3.7.1/jquery-3.7.1.jar:/root/.m2/repository/io/cucumber/cucumber-java/7.15.0/cucumber-java-7.15.0.jar:/root/.m2/repository/io/cucumber/cucumber-core/7.15.0/cucumber-core-7.15.0.jar:/root/.m2/repository/io/cucumber/cucumber-gherkin/7.15.0/cucumber-gherkin-7.15.0.jar:/root/.m2/repository/io/cucumber/cucumber-gherkin-messages/7.15.0/cucumber-gherkin-messages-7.15.0.jar:/root/.m2/repository/io/cucumber/gherkin/26.2.0/gherkin-26.2.0.jar:/root/.m2/repository/io/cucumber/messages/22.0.0/messages-22.0.0.jar:/root/.m2/repository/io/cucumber/tag-expressions/6.0.0/tag-expressions-6.0.0.jar:/root/.m2/repository/io/cucumber/cucumber-expressions/17.0.1/cucumber-expressions-17.0.1.jar:/root/.m2/repository/io/cucumber/datatable/7.15.0/datatable-7.15.0.jar:/root/.m2/repository/io/cucumber/cucumber-plugin/7.15.0/cucumber-plugin-7.15.0.jar:/root/.m2/repository/io/cucumber/docstring/7.15.0/docstring-7.15.0.jar:/root/.m2/repository/io/cucumber/html-formatter/20.4.0/html-formatter-20.4.0.jar:/root/.m2/repository/io/cucumber/junit-xml-formatter/0.2.0/junit-xml-formatter-0.2.0.jar:/root/.m2/repository/io/cucumber/ci-environment/10.0.0/ci-environment-10.0.0.jar:/root/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/root/.m2/repository/io/cucumber/cucumber-testng/7.15.0/cucumber-testng-7.15.0.jar:"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -28,7 +28,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="/app/target/surefire/surefirebooter-20260415175606777_3.jar"/>
+    <property name="surefire.real.class.path" value="/app/target/surefire/surefirebooter-20260415191352031_3.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="17.0.15+6"/>
     <property name="user.name" value="root"/>
@@ -37,7 +37,7 @@
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="file.encoding" value="UTF-8"/>
     <property name="logLevel" value="INFO"/>
-    <property name="browser" value="firefox"/>
+    <property name="browser" value="chrome"/>
     <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
     <property name="java.vendor.version" value="Temurin-17.0.15+6"/>
     <property name="localRepository" value="/root/.m2/repository"/>
@@ -57,7 +57,7 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="61.0"/>
   </properties>
-  <testcase name="runScenario[&quot;Successful login&quot;, &quot;Login functionality&quot;](3)" classname="com.automation.runners.TestRunner" time="316.431">
+  <testcase name="runScenario[&quot;Successful login&quot;, &quot;Login functionality&quot;](3)" classname="com.automation.runners.TestRunner" time="330.342">
     <failure message="Failed to initialize WebDriver" type="java.lang.RuntimeException"><![CDATA[java.lang.RuntimeException: Failed to initialize WebDriver
 	at com.automation.core.DriverManager.initDriver(DriverManager.java:33)
 	at com.automation.hooks.Hooks.setUp(Hooks.java:13)
@@ -118,11 +118,11 @@ Driver info: driver.version: ChromeDriver
 	... 40 more
 ]]></failure>
     <system-out><![CDATA[
-Scenario: Successful login               # src/test/resources/features/login.feature:8
-
 Scenario: Successful login               # src/test/resources/features/login.feature:3
 
 Scenario: Successful login               # src/test/resources/features/login.feature:13
+
+Scenario: Successful login               # src/test/resources/features/login.feature:8
 Initializing Driver...
 Initializing Driver...
 Initializing Driver...
@@ -316,11 +316,11 @@ Driver info: driver.version: ChromeDriver
     <system-err><![CDATA[SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
 SLF4J: Defaulting to no-operation (NOP) logger implementation
 SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-Apr 15, 2026 6:01:30 PM org.openqa.selenium.manager.SeleniumManager lambda$runCommand$1
+Apr 15, 2026 7:19:20 PM org.openqa.selenium.manager.SeleniumManager lambda$runCommand$1
 WARNING: error decoding response body
-Apr 15, 2026 6:01:30 PM org.openqa.selenium.manager.SeleniumManager lambda$runCommand$1
+Apr 15, 2026 7:19:20 PM org.openqa.selenium.manager.SeleniumManager lambda$runCommand$1
 WARNING: error decoding response body
-Apr 15, 2026 6:01:30 PM org.openqa.selenium.manager.SeleniumManager lambda$runCommand$1
+Apr 15, 2026 7:19:20 PM org.openqa.selenium.manager.SeleniumManager lambda$runCommand$1
 WARNING: error decoding response body
 org.openqa.selenium.remote.NoSuchDriverException: Unable to obtain: chromedriver, error Command failed with code: 65, executed: [--browser, chrome, --language-binding, java, --output, json]
 error decoding response body
@@ -489,7 +489,7 @@ Driver info: driver.version: ChromeDriver
 	... 40 more
 ]]></system-err>
   </testcase>
-  <testcase name="runScenario[&quot;Successful login&quot;, &quot;Login functionality&quot;](3)" classname="com.automation.runners.TestRunner" time="316.562">
+  <testcase name="runScenario[&quot;Successful login&quot;, &quot;Login functionality&quot;](3)" classname="com.automation.runners.TestRunner" time="330.646">
     <failure message="Failed to initialize WebDriver" type="java.lang.RuntimeException"><![CDATA[java.lang.RuntimeException: Failed to initialize WebDriver
 	at com.automation.core.DriverManager.initDriver(DriverManager.java:33)
 	at com.automation.hooks.Hooks.setUp(Hooks.java:13)
@@ -550,7 +550,7 @@ Driver info: driver.version: ChromeDriver
 	... 40 more
 ]]></failure>
   </testcase>
-  <testcase name="runScenario[&quot;Successful login&quot;, &quot;Login functionality&quot;](3)" classname="com.automation.runners.TestRunner" time="316.562">
+  <testcase name="runScenario[&quot;Successful login&quot;, &quot;Login functionality&quot;](3)" classname="com.automation.runners.TestRunner" time="330.646">
     <failure message="Failed to initialize WebDriver" type="java.lang.RuntimeException"><![CDATA[java.lang.RuntimeException: Failed to initialize WebDriver
 	at com.automation.core.DriverManager.initDriver(DriverManager.java:33)
 	at com.automation.hooks.Hooks.setUp(Hooks.java:13)

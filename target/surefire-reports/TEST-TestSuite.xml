@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="TestSuite" time="56.341" tests="3" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="TestSuite" time="185.064" tests="6" errors="0" skipped="0" failures="3">
   <properties>
     <property name="java.specification.version" value="26"/>
     <property name="sun.cpu.isalist" value="amd64"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
-    <property name="java.class.path" value="C:\Jenkins\portable selenium-grid-framework-v1.0\portable-selenium-grid-framework\target\test-classes;C:\Jenkins\portable selenium-grid-framework-v1.0\portable-selenium-grid-framework\target\classes;C:\Users\subha\.m2\repository\org\seleniumhq\selenium\selenium-java\4.21.0\selenium-java-4.21.0.jar;C:\Users\subha\.m2\repository\org\seleniumhq\selenium\selenium-api\4.21.0\selenium-api-4.21.0.jar;C:\Users\subha\.m2\repository\org\seleniumhq\selenium\selenium-chrome-driver\4.21.0\selenium-chrome-driver-4.21.0.jar;C:\Users\subha\.m2\repository\com\google\auto\service\auto-service-annotations\1.1.1\auto-service-annotations-1.1.1.jar;C:\Users\subha\.m2\repository\org\seleniumhq\selenium\selenium-chromium-driver\4.21.0\selenium-chromium-driver-4.21.0.jar;C:\Users\subha\.m2\repository\org\seleniumhq\selenium\selenium-json\4.21.0\selenium-json-4.21.0.jar;C:\Users\subha\.m2\repository\org\seleniumhq\selenium\selenium-manager\4.21.0\selenium-manager-4.21.0.jar;C:\Users\subha\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v123\4.21.0\selenium-devtools-v123-4.21.0.jar;C:\Users\subha\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v124\4.21.0\selenium-devtools-v124-4.21.0.jar;C:\Users\subha\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v125\4.21.0\selenium-devtools-v125-4.21.0.jar;C:\Users\subha\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v85\4.21.0\selenium-devtools-v85-4.21.0.jar;C:\Users\subha\.m2\repository\org\seleniumhq\selenium\selenium-edge-driver\4.21.0\selenium-edge-driver-4.21.0.jar;C:\Users\subha\.m2\repository\org\seleniumhq\selenium\selenium-firefox-driver\4.21.0\selenium-firefox-driver-4.21.0.jar;C:\Users\subha\.m2\repository\org\seleniumhq\selenium\selenium-http\4.21.0\selenium-http-4.21.0.jar;C:\Users\subha\.m2\repository\dev\failsafe\failsafe\3.3.2\failsafe-3.3.2.jar;C:\Users\subha\.m2\repository\org\seleniumhq\selenium\selenium-ie-driver\4.21.0\selenium-ie-driver-4.21.0.jar;C:\Users\subha\.m2\repository\org\seleniumhq\selenium\selenium-remote-driver\4.21.0\selenium-remote-driver-4.21.0.jar;C:\Users\subha\.m2\repository\com\google\guava\guava\33.2.0-jre\guava-33.2.0-jre.jar;C:\Users\subha\.m2\repository\com\google\guava\failureaccess\1.0.2\failureaccess-1.0.2.jar;C:\Users\subha\.m2\repository\com\google\guava\listenablefuture\9999.0-empty-to-avoid-conflict-with-guava\listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar;C:\Users\subha\.m2\repository\com\google\code\findbugs\jsr305\3.0.2\jsr305-3.0.2.jar;C:\Users\subha\.m2\repository\org\checkerframework\checker-qual\3.42.0\checker-qual-3.42.0.jar;C:\Users\subha\.m2\repository\com\google\errorprone\error_prone_annotations\2.26.1\error_prone_annotations-2.26.1.jar;C:\Users\subha\.m2\repository\com\google\j2objc\j2objc-annotations\3.0.0\j2objc-annotations-3.0.0.jar;C:\Users\subha\.m2\repository\io\opentelemetry\semconv\opentelemetry-semconv\1.25.0-alpha\opentelemetry-semconv-1.25.0-alpha.jar;C:\Users\subha\.m2\repository\io\opentelemetry\opentelemetry-api\1.38.0\opentelemetry-api-1.38.0.jar;C:\Users\subha\.m2\repository\io\opentelemetry\opentelemetry-context\1.38.0\opentelemetry-context-1.38.0.jar;C:\Users\subha\.m2\repository\io\opentelemetry\opentelemetry-exporter-logging\1.38.0\opentelemetry-exporter-logging-1.38.0.jar;C:\Users\subha\.m2\repository\io\opentelemetry\opentelemetry-sdk-common\1.38.0\opentelemetry-sdk-common-1.38.0.jar;C:\Users\subha\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure-spi\1.38.0\opentelemetry-sdk-extension-autoconfigure-spi-1.38.0.jar;C:\Users\subha\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure\1.38.0\opentelemetry-sdk-extension-autoconfigure-1.38.0.jar;C:\Users\subha\.m2\repository\io\opentelemetry\opentelemetry-api-incubator\1.38.0-alpha\opentelemetry-api-incubator-1.38.0-alpha.jar;C:\Users\subha\.m2\repository\io\opentelemetry\opentelemetry-sdk-trace\1.38.0\opentelemetry-sdk-trace-1.38.0.jar;C:\Users\subha\.m2\repository\io\opentelemetry\opentelemetry-sdk\1.38.0\opentelemetry-sdk-1.38.0.jar;C:\Users\subha\.m2\repository\io\opentelemetry\opentelemetry-sdk-metrics\1.38.0\opentelemetry-sdk-metrics-1.38.0.jar;C:\Users\subha\.m2\repository\io\opentelemetry\opentelemetry-sdk-logs\1.38.0\opentelemetry-sdk-logs-1.38.0.jar;C:\Users\subha\.m2\repository\net\bytebuddy\byte-buddy\1.14.15\byte-buddy-1.14.15.jar;C:\Users\subha\.m2\repository\org\seleniumhq\selenium\selenium-os\4.21.0\selenium-os-4.21.0.jar;C:\Users\subha\.m2\repository\org\apache\commons\commons-exec\1.4.0\commons-exec-1.4.0.jar;C:\Users\subha\.m2\repository\org\seleniumhq\selenium\selenium-safari-driver\4.21.0\selenium-safari-driver-4.21.0.jar;C:\Users\subha\.m2\repository\org\seleniumhq\selenium\selenium-support\4.21.0\selenium-support-4.21.0.jar;C:\Users\subha\.m2\repository\org\testng\testng\7.9.0\testng-7.9.0.jar;C:\Users\subha\.m2\repository\org\slf4j\slf4j-api\1.7.36\slf4j-api-1.7.36.jar;C:\Users\subha\.m2\repository\com\beust\jcommander\1.82\jcommander-1.82.jar;C:\Users\subha\.m2\repository\org\webjars\jquery\3.7.1\jquery-3.7.1.jar;C:\Users\subha\.m2\repository\io\cucumber\cucumber-java\7.15.0\cucumber-java-7.15.0.jar;C:\Users\subha\.m2\repository\io\cucumber\cucumber-core\7.15.0\cucumber-core-7.15.0.jar;C:\Users\subha\.m2\repository\io\cucumber\cucumber-gherkin\7.15.0\cucumber-gherkin-7.15.0.jar;C:\Users\subha\.m2\repository\io\cucumber\cucumber-gherkin-messages\7.15.0\cucumber-gherkin-messages-7.15.0.jar;C:\Users\subha\.m2\repository\io\cucumber\gherkin\26.2.0\gherkin-26.2.0.jar;C:\Users\subha\.m2\repository\io\cucumber\messages\22.0.0\messages-22.0.0.jar;C:\Users\subha\.m2\repository\io\cucumber\tag-expressions\6.0.0\tag-expressions-6.0.0.jar;C:\Users\subha\.m2\repository\io\cucumber\cucumber-expressions\17.0.1\cucumber-expressions-17.0.1.jar;C:\Users\subha\.m2\repository\io\cucumber\datatable\7.15.0\datatable-7.15.0.jar;C:\Users\subha\.m2\repository\io\cucumber\cucumber-plugin\7.15.0\cucumber-plugin-7.15.0.jar;C:\Users\subha\.m2\repository\io\cucumber\docstring\7.15.0\docstring-7.15.0.jar;C:\Users\subha\.m2\repository\io\cucumber\html-formatter\20.4.0\html-formatter-20.4.0.jar;C:\Users\subha\.m2\repository\io\cucumber\junit-xml-formatter\0.2.0\junit-xml-formatter-0.2.0.jar;C:\Users\subha\.m2\repository\io\cucumber\ci-environment\10.0.0\ci-environment-10.0.0.jar;C:\Users\subha\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\subha\.m2\repository\io\cucumber\cucumber-testng\7.15.0\cucumber-testng-7.15.0.jar;"/>
+    <property name="java.class.path" value="C:\Jenkins\portable selenium-grid-framework-v1.0\portable-selenium-grid-framework\target\test-classes;C:\Jenkins\portable selenium-grid-framework-v1.0\portable-selenium-grid-framework\target\classes;C:\Users\subha\.m2\repository\org\seleniumhq\selenium\selenium-java\4.21.0\selenium-java-4.21.0.jar;C:\Users\subha\.m2\repository\org\seleniumhq\selenium\selenium-api\4.21.0\selenium-api-4.21.0.jar;C:\Users\subha\.m2\repository\org\seleniumhq\selenium\selenium-chrome-driver\4.21.0\selenium-chrome-driver-4.21.0.jar;C:\Users\subha\.m2\repository\org\seleniumhq\selenium\selenium-chromium-driver\4.21.0\selenium-chromium-driver-4.21.0.jar;C:\Users\subha\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v123\4.21.0\selenium-devtools-v123-4.21.0.jar;C:\Users\subha\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v124\4.21.0\selenium-devtools-v124-4.21.0.jar;C:\Users\subha\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v125\4.21.0\selenium-devtools-v125-4.21.0.jar;C:\Users\subha\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v85\4.21.0\selenium-devtools-v85-4.21.0.jar;C:\Users\subha\.m2\repository\org\seleniumhq\selenium\selenium-edge-driver\4.21.0\selenium-edge-driver-4.21.0.jar;C:\Users\subha\.m2\repository\org\seleniumhq\selenium\selenium-ie-driver\4.21.0\selenium-ie-driver-4.21.0.jar;C:\Users\subha\.m2\repository\org\seleniumhq\selenium\selenium-remote-driver\4.21.0\selenium-remote-driver-4.21.0.jar;C:\Users\subha\.m2\repository\com\google\guava\guava\33.2.0-jre\guava-33.2.0-jre.jar;C:\Users\subha\.m2\repository\com\google\guava\failureaccess\1.0.2\failureaccess-1.0.2.jar;C:\Users\subha\.m2\repository\com\google\guava\listenablefuture\9999.0-empty-to-avoid-conflict-with-guava\listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar;C:\Users\subha\.m2\repository\com\google\code\findbugs\jsr305\3.0.2\jsr305-3.0.2.jar;C:\Users\subha\.m2\repository\org\checkerframework\checker-qual\3.42.0\checker-qual-3.42.0.jar;C:\Users\subha\.m2\repository\com\google\errorprone\error_prone_annotations\2.26.1\error_prone_annotations-2.26.1.jar;C:\Users\subha\.m2\repository\com\google\j2objc\j2objc-annotations\3.0.0\j2objc-annotations-3.0.0.jar;C:\Users\subha\.m2\repository\io\opentelemetry\semconv\opentelemetry-semconv\1.25.0-alpha\opentelemetry-semconv-1.25.0-alpha.jar;C:\Users\subha\.m2\repository\io\opentelemetry\opentelemetry-api\1.38.0\opentelemetry-api-1.38.0.jar;C:\Users\subha\.m2\repository\io\opentelemetry\opentelemetry-context\1.38.0\opentelemetry-context-1.38.0.jar;C:\Users\subha\.m2\repository\io\opentelemetry\opentelemetry-exporter-logging\1.38.0\opentelemetry-exporter-logging-1.38.0.jar;C:\Users\subha\.m2\repository\io\opentelemetry\opentelemetry-sdk-common\1.38.0\opentelemetry-sdk-common-1.38.0.jar;C:\Users\subha\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure-spi\1.38.0\opentelemetry-sdk-extension-autoconfigure-spi-1.38.0.jar;C:\Users\subha\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure\1.38.0\opentelemetry-sdk-extension-autoconfigure-1.38.0.jar;C:\Users\subha\.m2\repository\io\opentelemetry\opentelemetry-api-incubator\1.38.0-alpha\opentelemetry-api-incubator-1.38.0-alpha.jar;C:\Users\subha\.m2\repository\io\opentelemetry\opentelemetry-sdk-trace\1.38.0\opentelemetry-sdk-trace-1.38.0.jar;C:\Users\subha\.m2\repository\io\opentelemetry\opentelemetry-sdk\1.38.0\opentelemetry-sdk-1.38.0.jar;C:\Users\subha\.m2\repository\io\opentelemetry\opentelemetry-sdk-metrics\1.38.0\opentelemetry-sdk-metrics-1.38.0.jar;C:\Users\subha\.m2\repository\io\opentelemetry\opentelemetry-sdk-logs\1.38.0\opentelemetry-sdk-logs-1.38.0.jar;C:\Users\subha\.m2\repository\net\bytebuddy\byte-buddy\1.14.15\byte-buddy-1.14.15.jar;C:\Users\subha\.m2\repository\org\seleniumhq\selenium\selenium-os\4.21.0\selenium-os-4.21.0.jar;C:\Users\subha\.m2\repository\org\apache\commons\commons-exec\1.4.0\commons-exec-1.4.0.jar;C:\Users\subha\.m2\repository\org\seleniumhq\selenium\selenium-safari-driver\4.21.0\selenium-safari-driver-4.21.0.jar;C:\Users\subha\.m2\repository\org\seleniumhq\selenium\selenium-support\4.21.0\selenium-support-4.21.0.jar;C:\Users\subha\.m2\repository\org\seleniumhq\selenium\selenium-firefox-driver\4.21.0\selenium-firefox-driver-4.21.0.jar;C:\Users\subha\.m2\repository\com\google\auto\service\auto-service-annotations\1.1.1\auto-service-annotations-1.1.1.jar;C:\Users\subha\.m2\repository\org\seleniumhq\selenium\selenium-http\4.21.0\selenium-http-4.21.0.jar;C:\Users\subha\.m2\repository\dev\failsafe\failsafe\3.3.2\failsafe-3.3.2.jar;C:\Users\subha\.m2\repository\org\seleniumhq\selenium\selenium-json\4.21.0\selenium-json-4.21.0.jar;C:\Users\subha\.m2\repository\org\seleniumhq\selenium\selenium-manager\4.21.0\selenium-manager-4.21.0.jar;C:\Users\subha\.m2\repository\org\testng\testng\7.9.0\testng-7.9.0.jar;C:\Users\subha\.m2\repository\org\slf4j\slf4j-api\1.7.36\slf4j-api-1.7.36.jar;C:\Users\subha\.m2\repository\com\beust\jcommander\1.82\jcommander-1.82.jar;C:\Users\subha\.m2\repository\org\webjars\jquery\3.7.1\jquery-3.7.1.jar;C:\Users\subha\.m2\repository\io\cucumber\cucumber-java\7.15.0\cucumber-java-7.15.0.jar;C:\Users\subha\.m2\repository\io\cucumber\cucumber-core\7.15.0\cucumber-core-7.15.0.jar;C:\Users\subha\.m2\repository\io\cucumber\cucumber-gherkin\7.15.0\cucumber-gherkin-7.15.0.jar;C:\Users\subha\.m2\repository\io\cucumber\cucumber-gherkin-messages\7.15.0\cucumber-gherkin-messages-7.15.0.jar;C:\Users\subha\.m2\repository\io\cucumber\gherkin\26.2.0\gherkin-26.2.0.jar;C:\Users\subha\.m2\repository\io\cucumber\messages\22.0.0\messages-22.0.0.jar;C:\Users\subha\.m2\repository\io\cucumber\tag-expressions\6.0.0\tag-expressions-6.0.0.jar;C:\Users\subha\.m2\repository\io\cucumber\cucumber-expressions\17.0.1\cucumber-expressions-17.0.1.jar;C:\Users\subha\.m2\repository\io\cucumber\datatable\7.15.0\datatable-7.15.0.jar;C:\Users\subha\.m2\repository\io\cucumber\cucumber-plugin\7.15.0\cucumber-plugin-7.15.0.jar;C:\Users\subha\.m2\repository\io\cucumber\docstring\7.15.0\docstring-7.15.0.jar;C:\Users\subha\.m2\repository\io\cucumber\html-formatter\20.4.0\html-formatter-20.4.0.jar;C:\Users\subha\.m2\repository\io\cucumber\junit-xml-formatter\0.2.0\junit-xml-formatter-0.2.0.jar;C:\Users\subha\.m2\repository\io\cucumber\ci-environment\10.0.0\ci-environment-10.0.0.jar;C:\Users\subha\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\subha\.m2\repository\io\cucumber\cucumber-testng\7.15.0\cucumber-testng-7.15.0.jar;"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="user.variant" value=""/>
@@ -16,9 +16,9 @@
     <property name="user.country" value="IN"/>
     <property name="session.topDirectory" value="C:\Jenkins\portable selenium-grid-framework-v1.0\portable-selenium-grid-framework"/>
     <property name="sun.boot.library.path" value="C:\Java\bin"/>
-    <property name="sun.java.command" value="C:\Users\subha\AppData\Local\Temp\surefire870299075127367949\surefirebooter-20260415233359506_3.jar C:\Users\subha\AppData\Local\Temp\surefire870299075127367949 2026-04-15T23-33-59_256-jvmRun1 surefire-20260415233359506_1tmp surefire_0-20260415233359506_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\subha\AppData\Local\Temp\surefire10230545112690511493\surefirebooter-20260416010112605_3.jar C:\Users\subha\AppData\Local\Temp\surefire10230545112690511493 2026-04-16T01-01-12_416-jvmRun1 surefire-20260416010112605_1tmp surefire_0-20260416010112605_2tmp"/>
     <property name="jdk.debug" value="release"/>
-    <property name="surefire.test.class.path" value="C:\Jenkins\portable selenium-grid-framework-v1.0\portable-selenium-grid-framework\target\test-classes;C:\Jenkins\portable selenium-grid-framework-v1.0\portable-selenium-grid-framework\target\classes;C:\Users\subha\.m2\repository\org\seleniumhq\selenium\selenium-java\4.21.0\selenium-java-4.21.0.jar;C:\Users\subha\.m2\repository\org\seleniumhq\selenium\selenium-api\4.21.0\selenium-api-4.21.0.jar;C:\Users\subha\.m2\repository\org\seleniumhq\selenium\selenium-chrome-driver\4.21.0\selenium-chrome-driver-4.21.0.jar;C:\Users\subha\.m2\repository\com\google\auto\service\auto-service-annotations\1.1.1\auto-service-annotations-1.1.1.jar;C:\Users\subha\.m2\repository\org\seleniumhq\selenium\selenium-chromium-driver\4.21.0\selenium-chromium-driver-4.21.0.jar;C:\Users\subha\.m2\repository\org\seleniumhq\selenium\selenium-json\4.21.0\selenium-json-4.21.0.jar;C:\Users\subha\.m2\repository\org\seleniumhq\selenium\selenium-manager\4.21.0\selenium-manager-4.21.0.jar;C:\Users\subha\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v123\4.21.0\selenium-devtools-v123-4.21.0.jar;C:\Users\subha\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v124\4.21.0\selenium-devtools-v124-4.21.0.jar;C:\Users\subha\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v125\4.21.0\selenium-devtools-v125-4.21.0.jar;C:\Users\subha\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v85\4.21.0\selenium-devtools-v85-4.21.0.jar;C:\Users\subha\.m2\repository\org\seleniumhq\selenium\selenium-edge-driver\4.21.0\selenium-edge-driver-4.21.0.jar;C:\Users\subha\.m2\repository\org\seleniumhq\selenium\selenium-firefox-driver\4.21.0\selenium-firefox-driver-4.21.0.jar;C:\Users\subha\.m2\repository\org\seleniumhq\selenium\selenium-http\4.21.0\selenium-http-4.21.0.jar;C:\Users\subha\.m2\repository\dev\failsafe\failsafe\3.3.2\failsafe-3.3.2.jar;C:\Users\subha\.m2\repository\org\seleniumhq\selenium\selenium-ie-driver\4.21.0\selenium-ie-driver-4.21.0.jar;C:\Users\subha\.m2\repository\org\seleniumhq\selenium\selenium-remote-driver\4.21.0\selenium-remote-driver-4.21.0.jar;C:\Users\subha\.m2\repository\com\google\guava\guava\33.2.0-jre\guava-33.2.0-jre.jar;C:\Users\subha\.m2\repository\com\google\guava\failureaccess\1.0.2\failureaccess-1.0.2.jar;C:\Users\subha\.m2\repository\com\google\guava\listenablefuture\9999.0-empty-to-avoid-conflict-with-guava\listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar;C:\Users\subha\.m2\repository\com\google\code\findbugs\jsr305\3.0.2\jsr305-3.0.2.jar;C:\Users\subha\.m2\repository\org\checkerframework\checker-qual\3.42.0\checker-qual-3.42.0.jar;C:\Users\subha\.m2\repository\com\google\errorprone\error_prone_annotations\2.26.1\error_prone_annotations-2.26.1.jar;C:\Users\subha\.m2\repository\com\google\j2objc\j2objc-annotations\3.0.0\j2objc-annotations-3.0.0.jar;C:\Users\subha\.m2\repository\io\opentelemetry\semconv\opentelemetry-semconv\1.25.0-alpha\opentelemetry-semconv-1.25.0-alpha.jar;C:\Users\subha\.m2\repository\io\opentelemetry\opentelemetry-api\1.38.0\opentelemetry-api-1.38.0.jar;C:\Users\subha\.m2\repository\io\opentelemetry\opentelemetry-context\1.38.0\opentelemetry-context-1.38.0.jar;C:\Users\subha\.m2\repository\io\opentelemetry\opentelemetry-exporter-logging\1.38.0\opentelemetry-exporter-logging-1.38.0.jar;C:\Users\subha\.m2\repository\io\opentelemetry\opentelemetry-sdk-common\1.38.0\opentelemetry-sdk-common-1.38.0.jar;C:\Users\subha\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure-spi\1.38.0\opentelemetry-sdk-extension-autoconfigure-spi-1.38.0.jar;C:\Users\subha\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure\1.38.0\opentelemetry-sdk-extension-autoconfigure-1.38.0.jar;C:\Users\subha\.m2\repository\io\opentelemetry\opentelemetry-api-incubator\1.38.0-alpha\opentelemetry-api-incubator-1.38.0-alpha.jar;C:\Users\subha\.m2\repository\io\opentelemetry\opentelemetry-sdk-trace\1.38.0\opentelemetry-sdk-trace-1.38.0.jar;C:\Users\subha\.m2\repository\io\opentelemetry\opentelemetry-sdk\1.38.0\opentelemetry-sdk-1.38.0.jar;C:\Users\subha\.m2\repository\io\opentelemetry\opentelemetry-sdk-metrics\1.38.0\opentelemetry-sdk-metrics-1.38.0.jar;C:\Users\subha\.m2\repository\io\opentelemetry\opentelemetry-sdk-logs\1.38.0\opentelemetry-sdk-logs-1.38.0.jar;C:\Users\subha\.m2\repository\net\bytebuddy\byte-buddy\1.14.15\byte-buddy-1.14.15.jar;C:\Users\subha\.m2\repository\org\seleniumhq\selenium\selenium-os\4.21.0\selenium-os-4.21.0.jar;C:\Users\subha\.m2\repository\org\apache\commons\commons-exec\1.4.0\commons-exec-1.4.0.jar;C:\Users\subha\.m2\repository\org\seleniumhq\selenium\selenium-safari-driver\4.21.0\selenium-safari-driver-4.21.0.jar;C:\Users\subha\.m2\repository\org\seleniumhq\selenium\selenium-support\4.21.0\selenium-support-4.21.0.jar;C:\Users\subha\.m2\repository\org\testng\testng\7.9.0\testng-7.9.0.jar;C:\Users\subha\.m2\repository\org\slf4j\slf4j-api\1.7.36\slf4j-api-1.7.36.jar;C:\Users\subha\.m2\repository\com\beust\jcommander\1.82\jcommander-1.82.jar;C:\Users\subha\.m2\repository\org\webjars\jquery\3.7.1\jquery-3.7.1.jar;C:\Users\subha\.m2\repository\io\cucumber\cucumber-java\7.15.0\cucumber-java-7.15.0.jar;C:\Users\subha\.m2\repository\io\cucumber\cucumber-core\7.15.0\cucumber-core-7.15.0.jar;C:\Users\subha\.m2\repository\io\cucumber\cucumber-gherkin\7.15.0\cucumber-gherkin-7.15.0.jar;C:\Users\subha\.m2\repository\io\cucumber\cucumber-gherkin-messages\7.15.0\cucumber-gherkin-messages-7.15.0.jar;C:\Users\subha\.m2\repository\io\cucumber\gherkin\26.2.0\gherkin-26.2.0.jar;C:\Users\subha\.m2\repository\io\cucumber\messages\22.0.0\messages-22.0.0.jar;C:\Users\subha\.m2\repository\io\cucumber\tag-expressions\6.0.0\tag-expressions-6.0.0.jar;C:\Users\subha\.m2\repository\io\cucumber\cucumber-expressions\17.0.1\cucumber-expressions-17.0.1.jar;C:\Users\subha\.m2\repository\io\cucumber\datatable\7.15.0\datatable-7.15.0.jar;C:\Users\subha\.m2\repository\io\cucumber\cucumber-plugin\7.15.0\cucumber-plugin-7.15.0.jar;C:\Users\subha\.m2\repository\io\cucumber\docstring\7.15.0\docstring-7.15.0.jar;C:\Users\subha\.m2\repository\io\cucumber\html-formatter\20.4.0\html-formatter-20.4.0.jar;C:\Users\subha\.m2\repository\io\cucumber\junit-xml-formatter\0.2.0\junit-xml-formatter-0.2.0.jar;C:\Users\subha\.m2\repository\io\cucumber\ci-environment\10.0.0\ci-environment-10.0.0.jar;C:\Users\subha\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\subha\.m2\repository\io\cucumber\cucumber-testng\7.15.0\cucumber-testng-7.15.0.jar;"/>
+    <property name="surefire.test.class.path" value="C:\Jenkins\portable selenium-grid-framework-v1.0\portable-selenium-grid-framework\target\test-classes;C:\Jenkins\portable selenium-grid-framework-v1.0\portable-selenium-grid-framework\target\classes;C:\Users\subha\.m2\repository\org\seleniumhq\selenium\selenium-java\4.21.0\selenium-java-4.21.0.jar;C:\Users\subha\.m2\repository\org\seleniumhq\selenium\selenium-api\4.21.0\selenium-api-4.21.0.jar;C:\Users\subha\.m2\repository\org\seleniumhq\selenium\selenium-chrome-driver\4.21.0\selenium-chrome-driver-4.21.0.jar;C:\Users\subha\.m2\repository\org\seleniumhq\selenium\selenium-chromium-driver\4.21.0\selenium-chromium-driver-4.21.0.jar;C:\Users\subha\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v123\4.21.0\selenium-devtools-v123-4.21.0.jar;C:\Users\subha\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v124\4.21.0\selenium-devtools-v124-4.21.0.jar;C:\Users\subha\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v125\4.21.0\selenium-devtools-v125-4.21.0.jar;C:\Users\subha\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v85\4.21.0\selenium-devtools-v85-4.21.0.jar;C:\Users\subha\.m2\repository\org\seleniumhq\selenium\selenium-edge-driver\4.21.0\selenium-edge-driver-4.21.0.jar;C:\Users\subha\.m2\repository\org\seleniumhq\selenium\selenium-ie-driver\4.21.0\selenium-ie-driver-4.21.0.jar;C:\Users\subha\.m2\repository\org\seleniumhq\selenium\selenium-remote-driver\4.21.0\selenium-remote-driver-4.21.0.jar;C:\Users\subha\.m2\repository\com\google\guava\guava\33.2.0-jre\guava-33.2.0-jre.jar;C:\Users\subha\.m2\repository\com\google\guava\failureaccess\1.0.2\failureaccess-1.0.2.jar;C:\Users\subha\.m2\repository\com\google\guava\listenablefuture\9999.0-empty-to-avoid-conflict-with-guava\listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar;C:\Users\subha\.m2\repository\com\google\code\findbugs\jsr305\3.0.2\jsr305-3.0.2.jar;C:\Users\subha\.m2\repository\org\checkerframework\checker-qual\3.42.0\checker-qual-3.42.0.jar;C:\Users\subha\.m2\repository\com\google\errorprone\error_prone_annotations\2.26.1\error_prone_annotations-2.26.1.jar;C:\Users\subha\.m2\repository\com\google\j2objc\j2objc-annotations\3.0.0\j2objc-annotations-3.0.0.jar;C:\Users\subha\.m2\repository\io\opentelemetry\semconv\opentelemetry-semconv\1.25.0-alpha\opentelemetry-semconv-1.25.0-alpha.jar;C:\Users\subha\.m2\repository\io\opentelemetry\opentelemetry-api\1.38.0\opentelemetry-api-1.38.0.jar;C:\Users\subha\.m2\repository\io\opentelemetry\opentelemetry-context\1.38.0\opentelemetry-context-1.38.0.jar;C:\Users\subha\.m2\repository\io\opentelemetry\opentelemetry-exporter-logging\1.38.0\opentelemetry-exporter-logging-1.38.0.jar;C:\Users\subha\.m2\repository\io\opentelemetry\opentelemetry-sdk-common\1.38.0\opentelemetry-sdk-common-1.38.0.jar;C:\Users\subha\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure-spi\1.38.0\opentelemetry-sdk-extension-autoconfigure-spi-1.38.0.jar;C:\Users\subha\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure\1.38.0\opentelemetry-sdk-extension-autoconfigure-1.38.0.jar;C:\Users\subha\.m2\repository\io\opentelemetry\opentelemetry-api-incubator\1.38.0-alpha\opentelemetry-api-incubator-1.38.0-alpha.jar;C:\Users\subha\.m2\repository\io\opentelemetry\opentelemetry-sdk-trace\1.38.0\opentelemetry-sdk-trace-1.38.0.jar;C:\Users\subha\.m2\repository\io\opentelemetry\opentelemetry-sdk\1.38.0\opentelemetry-sdk-1.38.0.jar;C:\Users\subha\.m2\repository\io\opentelemetry\opentelemetry-sdk-metrics\1.38.0\opentelemetry-sdk-metrics-1.38.0.jar;C:\Users\subha\.m2\repository\io\opentelemetry\opentelemetry-sdk-logs\1.38.0\opentelemetry-sdk-logs-1.38.0.jar;C:\Users\subha\.m2\repository\net\bytebuddy\byte-buddy\1.14.15\byte-buddy-1.14.15.jar;C:\Users\subha\.m2\repository\org\seleniumhq\selenium\selenium-os\4.21.0\selenium-os-4.21.0.jar;C:\Users\subha\.m2\repository\org\apache\commons\commons-exec\1.4.0\commons-exec-1.4.0.jar;C:\Users\subha\.m2\repository\org\seleniumhq\selenium\selenium-safari-driver\4.21.0\selenium-safari-driver-4.21.0.jar;C:\Users\subha\.m2\repository\org\seleniumhq\selenium\selenium-support\4.21.0\selenium-support-4.21.0.jar;C:\Users\subha\.m2\repository\org\seleniumhq\selenium\selenium-firefox-driver\4.21.0\selenium-firefox-driver-4.21.0.jar;C:\Users\subha\.m2\repository\com\google\auto\service\auto-service-annotations\1.1.1\auto-service-annotations-1.1.1.jar;C:\Users\subha\.m2\repository\org\seleniumhq\selenium\selenium-http\4.21.0\selenium-http-4.21.0.jar;C:\Users\subha\.m2\repository\dev\failsafe\failsafe\3.3.2\failsafe-3.3.2.jar;C:\Users\subha\.m2\repository\org\seleniumhq\selenium\selenium-json\4.21.0\selenium-json-4.21.0.jar;C:\Users\subha\.m2\repository\org\seleniumhq\selenium\selenium-manager\4.21.0\selenium-manager-4.21.0.jar;C:\Users\subha\.m2\repository\org\testng\testng\7.9.0\testng-7.9.0.jar;C:\Users\subha\.m2\repository\org\slf4j\slf4j-api\1.7.36\slf4j-api-1.7.36.jar;C:\Users\subha\.m2\repository\com\beust\jcommander\1.82\jcommander-1.82.jar;C:\Users\subha\.m2\repository\org\webjars\jquery\3.7.1\jquery-3.7.1.jar;C:\Users\subha\.m2\repository\io\cucumber\cucumber-java\7.15.0\cucumber-java-7.15.0.jar;C:\Users\subha\.m2\repository\io\cucumber\cucumber-core\7.15.0\cucumber-core-7.15.0.jar;C:\Users\subha\.m2\repository\io\cucumber\cucumber-gherkin\7.15.0\cucumber-gherkin-7.15.0.jar;C:\Users\subha\.m2\repository\io\cucumber\cucumber-gherkin-messages\7.15.0\cucumber-gherkin-messages-7.15.0.jar;C:\Users\subha\.m2\repository\io\cucumber\gherkin\26.2.0\gherkin-26.2.0.jar;C:\Users\subha\.m2\repository\io\cucumber\messages\22.0.0\messages-22.0.0.jar;C:\Users\subha\.m2\repository\io\cucumber\tag-expressions\6.0.0\tag-expressions-6.0.0.jar;C:\Users\subha\.m2\repository\io\cucumber\cucumber-expressions\17.0.1\cucumber-expressions-17.0.1.jar;C:\Users\subha\.m2\repository\io\cucumber\datatable\7.15.0\datatable-7.15.0.jar;C:\Users\subha\.m2\repository\io\cucumber\cucumber-plugin\7.15.0\cucumber-plugin-7.15.0.jar;C:\Users\subha\.m2\repository\io\cucumber\docstring\7.15.0\docstring-7.15.0.jar;C:\Users\subha\.m2\repository\io\cucumber\html-formatter\20.4.0\html-formatter-20.4.0.jar;C:\Users\subha\.m2\repository\io\cucumber\junit-xml-formatter\0.2.0\junit-xml-formatter-0.2.0.jar;C:\Users\subha\.m2\repository\io\cucumber\ci-environment\10.0.0\ci-environment-10.0.0.jar;C:\Users\subha\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\subha\.m2\repository\io\cucumber\cucumber-testng\7.15.0\cucumber-testng-7.15.0.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="C:\Users\subha"/>
     <property name="user.language" value="en"/>
@@ -31,7 +31,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\subha\AppData\Local\Temp\surefire870299075127367949\surefirebooter-20260415233359506_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\subha\AppData\Local\Temp\surefire10230545112690511493\surefirebooter-20260416010112605_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="26+35-2893"/>
@@ -64,16 +64,25 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="70.0"/>
   </properties>
-  <testcase name="runScenario[&quot;Successful login&quot;, &quot;Login functionality&quot;](3)" classname="com.automation.runners.TestRunner" time="54.837">
+  <testcase name="runScenario[&quot;Successful login&quot;, &quot;Login functionality&quot;](1)" classname="com.automation.runners.TestRunner" time="71.224">
     <system-out><![CDATA[
 Scenario: Successful login               # src/test/resources/features/login.feature:3
 
-Scenario: Successful login               # src/test/resources/features/login.feature:8
+Scenario: Successful login               # src/test/resources/features/login.feature:13
+
+Scenario: Successful login               # src/test/resources/features/login.feature:3
 
 Scenario: Successful login               # src/test/resources/features/login.feature:13
-Initializing Driver...
-Initializing Driver...
-Initializing Driver...
+
+Scenario: Successful login               # src/test/resources/features/login.feature:8
+
+Scenario: Successful login               # src/test/resources/features/login.feature:8
+Thread: TestNG-PoolService-3 Browser: chrome
+Thread: TestNG-PoolService-2 Browser: firefox
+Thread: TestNG-PoolService-3 Browser: chrome
+Thread: TestNG-PoolService-1 Browser: firefox
+Thread: TestNG-PoolService-1 Browser: chrome
+Thread: TestNG-PoolService-2 Browser: firefox
   Given user is on login page            # com.automation.stepdefinitions.LoginSteps.openLoginPage()
   Given user is on login page            # com.automation.stepdefinitions.LoginSteps.openLoginPage()
   Given user is on login page            # com.automation.stepdefinitions.LoginSteps.openLoginPage()
@@ -90,10 +99,407 @@ Login successful
     <system-err><![CDATA[SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
 SLF4J: Defaulting to no-operation (NOP) logger implementation
 SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-Apr 15, 2026 11:34:01 PM org.openqa.selenium.remote.tracing.opentelemetry.OpenTelemetryTracer createTracer
+Apr 16, 2026 1:01:15 AM org.openqa.selenium.remote.tracing.opentelemetry.OpenTelemetryTracer createTracer
 INFO: Using OpenTelemetry for tracing
 ]]></system-err>
   </testcase>
-  <testcase name="runScenario[&quot;Successful login&quot;, &quot;Login functionality&quot;](3)" classname="com.automation.runners.TestRunner" time="54.89"/>
-  <testcase name="runScenario[&quot;Successful login&quot;, &quot;Login functionality&quot;](3)" classname="com.automation.runners.TestRunner" time="54.89"/>
+  <testcase name="runScenario[&quot;Successful login&quot;, &quot;Login functionality&quot;](2)" classname="com.automation.runners.TestRunner" time="71.29"/>
+  <testcase name="runScenario[&quot;Successful login&quot;, &quot;Login functionality&quot;](2)" classname="com.automation.runners.TestRunner" time="71.291"/>
+  <testcase name="runScenario[&quot;Successful login&quot;, &quot;Login functionality&quot;](3)" classname="com.automation.runners.TestRunner" time="182.225">
+    <failure message="org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure. &#10;Host info: host: &apos;AGASTHIYA&apos;, ip: &apos;192.168.0.106&apos;" type="java.lang.RuntimeException"><![CDATA[java.lang.RuntimeException: 
+org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure. 
+Host info: host: 'AGASTHIYA', ip: '192.168.0.106'
+	at com.automation.core.DriverManager.initDriver(DriverManager.java:40)
+	at com.automation.hooks.Hooks.setUp(Hooks.java:29)
+Caused by: org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure. 
+Host info: host: 'AGASTHIYA', ip: '192.168.0.106'
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:536)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:232)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:161)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:141)
+	at com.automation.core.DriverManager.initDriver(DriverManager.java:25)
+	at com.automation.hooks.Hooks.setUp(Hooks.java:29)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at io.cucumber.java.Invoker.doInvoke(Invoker.java:66)
+	at io.cucumber.java.Invoker.invoke(Invoker.java:24)
+	at io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)
+	at io.cucumber.java.JavaHookDefinition.execute(JavaHookDefinition.java:64)
+	at io.cucumber.core.runner.CoreHookDefinition.execute(CoreHookDefinition.java:46)
+	at io.cucumber.core.runner.HookDefinitionMatch.runStep(HookDefinitionMatch.java:21)
+	at io.cucumber.core.runner.ExecutionMode$1.execute(ExecutionMode.java:10)
+	at io.cucumber.core.runner.TestStep.executeStep(TestStep.java:84)
+	at io.cucumber.core.runner.TestStep.run(TestStep.java:56)
+	at io.cucumber.core.runner.TestCase.run(TestCase.java:78)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:75)
+	at io.cucumber.testng.TestNGCucumberRunner.lambda$runScenario$1(TestNGCucumberRunner.java:132)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:137)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:137)
+	at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:129)
+	at io.cucumber.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:35)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)
+	at org.testng.internal.invokers.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:80)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1789)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
+	at java.base/java.lang.Thread.run(Thread.java:1516)
+Caused by: org.openqa.selenium.TimeoutException: java.util.concurrent.TimeoutException
+Build info: version: '4.21.0', revision: '79ed462ef4'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '26'
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:399)
+	at org.openqa.selenium.remote.http.AddSeleniumUserAgent.lambda$apply$0(AddSeleniumUserAgent.java:42)
+	at org.openqa.selenium.remote.http.Filter.lambda$andFinally$1(Filter.java:55)
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute(JdkHttpClient.java:355)
+	at org.openqa.selenium.remote.tracing.TracedHttpClient.execute(TracedHttpClient.java:54)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:89)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:162)
+	at org.openqa.selenium.remote.TracedCommandExecutor.execute(TracedCommandExecutor.java:51)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+	... 34 more
+Caused by: java.util.concurrent.TimeoutException
+	at java.base/java.util.concurrent.CompletableFuture.timedGet(CompletableFuture.java:1981)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2116)
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:382)
+	... 44 more
+]]></failure>
+    <system-out><![CDATA[      java.lang.RuntimeException: org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure. 
+Host info: host: 'AGASTHIYA', ip: '192.168.0.106'
+	at com.automation.core.DriverManager.initDriver(DriverManager.java:40)
+	at com.automation.hooks.Hooks.setUp(Hooks.java:29)
+Caused by: org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure. 
+Host info: host: 'AGASTHIYA', ip: '192.168.0.106'
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:536)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:232)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:161)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:141)
+	at com.automation.core.DriverManager.initDriver(DriverManager.java:25)
+	at com.automation.hooks.Hooks.setUp(Hooks.java:29)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at io.cucumber.java.Invoker.doInvoke(Invoker.java:66)
+	at io.cucumber.java.Invoker.invoke(Invoker.java:24)
+	at io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)
+	at io.cucumber.java.JavaHookDefinition.execute(JavaHookDefinition.java:64)
+	at io.cucumber.core.runner.CoreHookDefinition.execute(CoreHookDefinition.java:46)
+	at io.cucumber.core.runner.HookDefinitionMatch.runStep(HookDefinitionMatch.java:21)
+	at io.cucumber.core.runner.ExecutionMode$1.execute(ExecutionMode.java:10)
+	at io.cucumber.core.runner.TestStep.executeStep(TestStep.java:84)
+	at io.cucumber.core.runner.TestStep.run(TestStep.java:56)
+	at io.cucumber.core.runner.TestCase.run(TestCase.java:78)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:75)
+	at io.cucumber.testng.TestNGCucumberRunner.lambda$runScenario$1(TestNGCucumberRunner.java:132)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:137)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:137)
+	at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:129)
+	at io.cucumber.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:35)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)
+	at org.testng.internal.invokers.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:80)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1789)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
+	at java.base/java.lang.Thread.run(Thread.java:1516)
+Caused by: org.openqa.selenium.TimeoutException: java.util.concurrent.TimeoutException
+Build info: version: '4.21.0', revision: '79ed462ef4'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '26'
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:399)
+	at org.openqa.selenium.remote.http.AddSeleniumUserAgent.lambda$apply$0(AddSeleniumUserAgent.java:42)
+	at org.openqa.selenium.remote.http.Filter.lambda$andFinally$1(Filter.java:55)
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute(JdkHttpClient.java:355)
+	at org.openqa.selenium.remote.tracing.TracedHttpClient.execute(TracedHttpClient.java:54)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:89)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:162)
+	at org.openqa.selenium.remote.TracedCommandExecutor.execute(TracedCommandExecutor.java:51)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+	... 34 more
+Caused by: java.util.concurrent.TimeoutException
+	at java.base/java.util.concurrent.CompletableFuture.timedGet(CompletableFuture.java:1981)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2116)
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:382)
+	... 44 more
+
+      java.lang.RuntimeException: org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure. 
+Host info: host: 'AGASTHIYA', ip: '192.168.0.106'
+	at com.automation.core.DriverManager.initDriver(DriverManager.java:40)
+	at com.automation.hooks.Hooks.setUp(Hooks.java:29)
+Caused by: org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure. 
+Host info: host: 'AGASTHIYA', ip: '192.168.0.106'
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:536)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:232)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:161)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:141)
+	at com.automation.core.DriverManager.initDriver(DriverManager.java:25)
+	at com.automation.hooks.Hooks.setUp(Hooks.java:29)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at io.cucumber.java.Invoker.doInvoke(Invoker.java:66)
+	at io.cucumber.java.Invoker.invoke(Invoker.java:24)
+	at io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)
+	at io.cucumber.java.JavaHookDefinition.execute(JavaHookDefinition.java:64)
+	at io.cucumber.core.runner.CoreHookDefinition.execute(CoreHookDefinition.java:46)
+	at io.cucumber.core.runner.HookDefinitionMatch.runStep(HookDefinitionMatch.java:21)
+	at io.cucumber.core.runner.ExecutionMode$1.execute(ExecutionMode.java:10)
+	at io.cucumber.core.runner.TestStep.executeStep(TestStep.java:84)
+	at io.cucumber.core.runner.TestStep.run(TestStep.java:56)
+	at io.cucumber.core.runner.TestCase.run(TestCase.java:78)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:75)
+	at io.cucumber.testng.TestNGCucumberRunner.lambda$runScenario$1(TestNGCucumberRunner.java:132)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:137)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:137)
+	at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:129)
+	at io.cucumber.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:35)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)
+	at org.testng.internal.invokers.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:80)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1789)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
+	at java.base/java.lang.Thread.run(Thread.java:1516)
+Caused by: org.openqa.selenium.TimeoutException: java.util.concurrent.TimeoutException
+Build info: version: '4.21.0', revision: '79ed462ef4'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '26'
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:399)
+	at org.openqa.selenium.remote.http.AddSeleniumUserAgent.lambda$apply$0(AddSeleniumUserAgent.java:42)
+	at org.openqa.selenium.remote.http.Filter.lambda$andFinally$1(Filter.java:55)
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute(JdkHttpClient.java:355)
+	at org.openqa.selenium.remote.tracing.TracedHttpClient.execute(TracedHttpClient.java:54)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:89)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:162)
+	at org.openqa.selenium.remote.TracedCommandExecutor.execute(TracedCommandExecutor.java:51)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+	... 34 more
+Caused by: java.util.concurrent.TimeoutException
+	at java.base/java.util.concurrent.CompletableFuture.timedGet(CompletableFuture.java:1981)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2116)
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:382)
+	... 44 more
+
+      java.lang.RuntimeException: org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure. 
+Host info: host: 'AGASTHIYA', ip: '192.168.0.106'
+	at com.automation.core.DriverManager.initDriver(DriverManager.java:40)
+	at com.automation.hooks.Hooks.setUp(Hooks.java:29)
+Caused by: org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure. 
+Host info: host: 'AGASTHIYA', ip: '192.168.0.106'
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:536)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:232)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:161)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:141)
+	at com.automation.core.DriverManager.initDriver(DriverManager.java:25)
+	at com.automation.hooks.Hooks.setUp(Hooks.java:29)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at io.cucumber.java.Invoker.doInvoke(Invoker.java:66)
+	at io.cucumber.java.Invoker.invoke(Invoker.java:24)
+	at io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)
+	at io.cucumber.java.JavaHookDefinition.execute(JavaHookDefinition.java:64)
+	at io.cucumber.core.runner.CoreHookDefinition.execute(CoreHookDefinition.java:46)
+	at io.cucumber.core.runner.HookDefinitionMatch.runStep(HookDefinitionMatch.java:21)
+	at io.cucumber.core.runner.ExecutionMode$1.execute(ExecutionMode.java:10)
+	at io.cucumber.core.runner.TestStep.executeStep(TestStep.java:84)
+	at io.cucumber.core.runner.TestStep.run(TestStep.java:56)
+	at io.cucumber.core.runner.TestCase.run(TestCase.java:78)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:75)
+	at io.cucumber.testng.TestNGCucumberRunner.lambda$runScenario$1(TestNGCucumberRunner.java:132)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:137)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:137)
+	at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:129)
+	at io.cucumber.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:35)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)
+	at org.testng.internal.invokers.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:80)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1789)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
+	at java.base/java.lang.Thread.run(Thread.java:1516)
+Caused by: org.openqa.selenium.TimeoutException: java.util.concurrent.TimeoutException
+Build info: version: '4.21.0', revision: '79ed462ef4'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '26'
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:399)
+	at org.openqa.selenium.remote.http.AddSeleniumUserAgent.lambda$apply$0(AddSeleniumUserAgent.java:42)
+	at org.openqa.selenium.remote.http.Filter.lambda$andFinally$1(Filter.java:55)
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute(JdkHttpClient.java:355)
+	at org.openqa.selenium.remote.tracing.TracedHttpClient.execute(TracedHttpClient.java:54)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:89)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:162)
+	at org.openqa.selenium.remote.TracedCommandExecutor.execute(TracedCommandExecutor.java:51)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+	... 34 more
+Caused by: java.util.concurrent.TimeoutException
+	at java.base/java.util.concurrent.CompletableFuture.timedGet(CompletableFuture.java:1981)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2116)
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:382)
+	... 44 more
+
+  Given user is on login page            # com.automation.stepdefinitions.LoginSteps.openLoginPage()
+  Given user is on login page            # com.automation.stepdefinitions.LoginSteps.openLoginPage()
+  Given user is on login page            # com.automation.stepdefinitions.LoginSteps.openLoginPage()
+  When user enters username and password # com.automation.stepdefinitions.LoginSteps.enterCredentials()
+  Then user should land on dashboard     # com.automation.stepdefinitions.LoginSteps.verifyDashboard()
+  When user enters username and password # com.automation.stepdefinitions.LoginSteps.enterCredentials()
+  Then user should land on dashboard     # com.automation.stepdefinitions.LoginSteps.verifyDashboard()
+  When user enters username and password # com.automation.stepdefinitions.LoginSteps.enterCredentials()
+  Then user should land on dashboard     # com.automation.stepdefinitions.LoginSteps.verifyDashboard()
+]]></system-out>
+  </testcase>
+  <testcase name="runScenario[&quot;Successful login&quot;, &quot;Login functionality&quot;](3)" classname="com.automation.runners.TestRunner" time="182.243">
+    <failure message="org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure. &#10;Host info: host: &apos;AGASTHIYA&apos;, ip: &apos;192.168.0.106&apos;" type="java.lang.RuntimeException"><![CDATA[java.lang.RuntimeException: 
+org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure. 
+Host info: host: 'AGASTHIYA', ip: '192.168.0.106'
+	at com.automation.core.DriverManager.initDriver(DriverManager.java:40)
+	at com.automation.hooks.Hooks.setUp(Hooks.java:29)
+Caused by: org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure. 
+Host info: host: 'AGASTHIYA', ip: '192.168.0.106'
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:536)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:232)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:161)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:141)
+	at com.automation.core.DriverManager.initDriver(DriverManager.java:25)
+	at com.automation.hooks.Hooks.setUp(Hooks.java:29)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at io.cucumber.java.Invoker.doInvoke(Invoker.java:66)
+	at io.cucumber.java.Invoker.invoke(Invoker.java:24)
+	at io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)
+	at io.cucumber.java.JavaHookDefinition.execute(JavaHookDefinition.java:64)
+	at io.cucumber.core.runner.CoreHookDefinition.execute(CoreHookDefinition.java:46)
+	at io.cucumber.core.runner.HookDefinitionMatch.runStep(HookDefinitionMatch.java:21)
+	at io.cucumber.core.runner.ExecutionMode$1.execute(ExecutionMode.java:10)
+	at io.cucumber.core.runner.TestStep.executeStep(TestStep.java:84)
+	at io.cucumber.core.runner.TestStep.run(TestStep.java:56)
+	at io.cucumber.core.runner.TestCase.run(TestCase.java:78)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:75)
+	at io.cucumber.testng.TestNGCucumberRunner.lambda$runScenario$1(TestNGCucumberRunner.java:132)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:137)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:137)
+	at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:129)
+	at io.cucumber.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:35)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)
+	at org.testng.internal.invokers.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:80)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1789)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
+	at java.base/java.lang.Thread.run(Thread.java:1516)
+Caused by: org.openqa.selenium.TimeoutException: java.util.concurrent.TimeoutException
+Build info: version: '4.21.0', revision: '79ed462ef4'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '26'
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:399)
+	at org.openqa.selenium.remote.http.AddSeleniumUserAgent.lambda$apply$0(AddSeleniumUserAgent.java:42)
+	at org.openqa.selenium.remote.http.Filter.lambda$andFinally$1(Filter.java:55)
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute(JdkHttpClient.java:355)
+	at org.openqa.selenium.remote.tracing.TracedHttpClient.execute(TracedHttpClient.java:54)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:89)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:162)
+	at org.openqa.selenium.remote.TracedCommandExecutor.execute(TracedCommandExecutor.java:51)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+	... 34 more
+Caused by: java.util.concurrent.TimeoutException
+	at java.base/java.util.concurrent.CompletableFuture.timedGet(CompletableFuture.java:1981)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2116)
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:382)
+	... 44 more
+]]></failure>
+  </testcase>
+  <testcase name="runScenario[&quot;Successful login&quot;, &quot;Login functionality&quot;](3)" classname="com.automation.runners.TestRunner" time="182.243">
+    <failure message="org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure. &#10;Host info: host: &apos;AGASTHIYA&apos;, ip: &apos;192.168.0.106&apos;" type="java.lang.RuntimeException"><![CDATA[java.lang.RuntimeException: 
+org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure. 
+Host info: host: 'AGASTHIYA', ip: '192.168.0.106'
+	at com.automation.core.DriverManager.initDriver(DriverManager.java:40)
+	at com.automation.hooks.Hooks.setUp(Hooks.java:29)
+Caused by: org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure. 
+Host info: host: 'AGASTHIYA', ip: '192.168.0.106'
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:536)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:232)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:161)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:141)
+	at com.automation.core.DriverManager.initDriver(DriverManager.java:25)
+	at com.automation.hooks.Hooks.setUp(Hooks.java:29)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at io.cucumber.java.Invoker.doInvoke(Invoker.java:66)
+	at io.cucumber.java.Invoker.invoke(Invoker.java:24)
+	at io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)
+	at io.cucumber.java.JavaHookDefinition.execute(JavaHookDefinition.java:64)
+	at io.cucumber.core.runner.CoreHookDefinition.execute(CoreHookDefinition.java:46)
+	at io.cucumber.core.runner.HookDefinitionMatch.runStep(HookDefinitionMatch.java:21)
+	at io.cucumber.core.runner.ExecutionMode$1.execute(ExecutionMode.java:10)
+	at io.cucumber.core.runner.TestStep.executeStep(TestStep.java:84)
+	at io.cucumber.core.runner.TestStep.run(TestStep.java:56)
+	at io.cucumber.core.runner.TestCase.run(TestCase.java:78)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:75)
+	at io.cucumber.testng.TestNGCucumberRunner.lambda$runScenario$1(TestNGCucumberRunner.java:132)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:137)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:137)
+	at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:129)
+	at io.cucumber.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:35)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)
+	at org.testng.internal.invokers.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:80)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1789)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
+	at java.base/java.lang.Thread.run(Thread.java:1516)
+Caused by: org.openqa.selenium.TimeoutException: java.util.concurrent.TimeoutException
+Build info: version: '4.21.0', revision: '79ed462ef4'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '26'
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:399)
+	at org.openqa.selenium.remote.http.AddSeleniumUserAgent.lambda$apply$0(AddSeleniumUserAgent.java:42)
+	at org.openqa.selenium.remote.http.Filter.lambda$andFinally$1(Filter.java:55)
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute(JdkHttpClient.java:355)
+	at org.openqa.selenium.remote.tracing.TracedHttpClient.execute(TracedHttpClient.java:54)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:89)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:162)
+	at org.openqa.selenium.remote.TracedCommandExecutor.execute(TracedCommandExecutor.java:51)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+	... 34 more
+Caused by: java.util.concurrent.TimeoutException
+	at java.base/java.util.concurrent.CompletableFuture.timedGet(CompletableFuture.java:1981)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2116)
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:382)
+	... 44 more
+]]></failure>
+  </testcase>
 </testsuite>

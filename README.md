@@ -1,149 +1,201 @@
-🚀 Portable Selenium Grid Automation Framework
-
-Implemented parallel execution using TestNG and achieved distributed execution by scaling Selenium Grid nodes using Docker. Each test runs on a separate containerized browser instance, ensuring true parallelism and scalability.
-
+🚀 Selenium Grid Automation Framework (Docker + Parallel + Multi-Browser)
 📌 Overview
 
-This is a fully containerized Selenium automation framework designed for:
+This project is a scalable Selenium automation framework built with:
 
-✅ Parallel execution
-✅ Cross-browser testing (Chrome + Firefox)
-✅ Selenium Grid (Docker)
-✅ Cucumber + TestNG
-✅ CI/CD integration (Jenkins + GitHub Actions)
+✅ Java + Selenium 4
+✅ Cucumber (BDD)
+✅ TestNG (Parallel execution)
+✅ Docker-based Selenium Grid
+✅ CI/CD ready (Jenkins compatible)
 
-👉 Built to run anywhere with zero manual setup
+It supports:
 
-🧱 Tech Stack
-Java 17
-Selenium WebDriver
-Cucumber (BDD)
-TestNG
-Docker & Docker Compose
-Jenkins Pipeline
-GitHub Actions
-⚡ One-Click Execution
-🧰 Prerequisite
+🔁 Parallel execution
+🌐 Cross-browser testing (Chrome + Firefox)
+📦 Containerized Grid (Docker)
+⚡ Dynamic browser allocation
+🏗️ Architecture
 
-Install Docker Desktop
+TestNG + Cucumber
+        ↓
+Hooks (Before/After)
+        ↓
+DriverManager (ThreadLocal)
+        ↓
+RemoteWebDriver
+        ↓
+Selenium Grid (Docker Hub + Nodes)
 
-▶️ Run the framework
-git clone https://github.com/guru4ec-dev/portable-selenium-grid-framework.git
-cd portable-selenium-grid-framework
-docker-compose up --build
+⚙️ Key Features
+✅ 1. Parallel Execution
+Implemented using TestNG + DataProvider
+@Override
+@DataProvider(parallel = true)
+public Object[][] scenarios() {
+    return super.scenarios();
+}
 
-🌐 Selenium Grid UI
+✅ 2. Thread-Safe Driver (ThreadLocal)
+private static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
 
-Open in browser:
 
+Ensures:
+
+No session conflicts
+Stable parallel execution
+
+✅ 3. Dynamic Browser Selection
+✔ Supports:
+CLI override
+Auto distribution across browsers
+String browser = System.getProperty("browser");
+
+if (browser == null) {
+    int index = counter.getAndIncrement() % BROWSERS.length;
+    browser = BROWSERS[index];
+}
+
+✅ 4. Multi-Browser Execution
+
+Supports:
+
+Chrome
+Firefox
+
+Runs both browsers in parallel automatically
+
+🐳 Selenium Grid Setup (Docker)
+🔹 Start Grid with Scaling
+docker-compose up --scale chrome=3 --scale firefox=3 -d
+
+🔹 Verify Containers
+docker ps
+
+
+Expected:
+
+3 Chrome nodes
+3 Firefox nodes
+1 Hub
+🔹 Access Grid UI
 http://localhost:4444
 
-🧪 Test Execution
+▶️ Test Execution
+🔹 Run (Auto Browser Distribution)
+mvn clean test -Dexecution=remote
 
-The framework automatically:
+👉 Runs on:
 
-Starts Selenium Grid (Hub + Nodes)
-Executes tests in:
-Chrome ✅
-Firefox ✅
-Runs scenarios in parallel
-Generates reports
-📊 Reports
+Chrome + Firefox (parallel)
+🔹 Run Only Chrome
+mvn clean test -Dexecution=remote -Dbrowser=chrome
 
-After execution, reports are available in:
+🔹 Run Only Firefox
+mvn clean test -Dexecution=remote -Dbrowser=firefox
 
-/reports
+⚡ Parallel Configuration
+testng.xml
+<suite name="Suite" parallel="methods" thread-count="6">
+    <test name="Test">
+        <classes>
+            <class name="com.automation.runners.TestRunner"/>
+        </classes>
+    </test>
+</suite>
 
 
-Includes:
+🧠 Smart Browser Distribution
 
-Cucumber HTML Report
-Allure Results
-🐳 Docker Architecture
-Selenium Grid
- ├── Hub
- ├── Chrome Node
- ├── Firefox Node
+Uses Atomic Counter:
 
-Test Execution
- ├── Chrome Tests Container
- └── Firefox Tests Container
+private static AtomicInteger counter = new AtomicInteger(0);
+private static final String[] BROWSERS = {"chrome", "firefox"};
 
-🔄 Cross-Browser Execution
+Benefits:
+Even load distribution
+No dependency on thread ID
+Predictable execution
 
-Runs in parallel:
+❗ Common Issues & Fixes
+🔴 Issue: Queue buildup in Grid
 
-Browser	Execution
-Chrome	✅
-Firefox	✅
-⚙️ Run Specific Browser
-mvn clean test -Dbrowser=chrome
-mvn clean test -Dbrowser=firefox
+Cause:
 
-🧪 Run Headless Mode
-mvn clean test -Dheadless=true
+Only one browser used
 
-🏗️ Jenkins Integration
+Fix:
 
-This framework supports Jenkins pipeline:
+Enable dynamic browser selection
+🔴 Issue: Only 3 sessions running
 
-Parallel browser execution
-Automated reporting
-Email notifications
-🤖 GitHub Actions (CI/CD)
+Cause:
 
-Tests run automatically on:
+thread-count = 3
 
-Push to main branch
-Pull requests
+Fix:
 
-👉 Check Actions tab in GitHub
+thread-count="6"
 
-📁 Project Structure
-.
-├── docker-compose.yml
-├── Dockerfile
-├── Jenkinsfile
-├── pom.xml
-├── src/
-│   └── test/
-│       ├── java/
-│       └── resources/
-├── reports/
+🔴 Issue: SessionNotCreatedException
 
-🛑 Stop Execution
-docker-compose down
+Cause:
 
-🚀 Scaling (Advanced)
+Insufficient nodes
 
-Run multiple nodes:
+Fix:
 
-docker-compose up --scale chrome=2 --scale firefox=2
+docker-compose up --scale chrome=3 --scale firefox=3 -d
 
-💡 Key Features
+🔴 Issue: Invalid Hook Signature
 
-✔ Fully portable (no setup required)
-✔ Parallel + cross-browser execution
-✔ Dockerized Selenium Grid
-✔ CI/CD ready
-✔ Thread-safe WebDriver (ThreadLocal)
+Wrong:
 
-🏆 Use Cases
-Enterprise automation frameworks
-CI/CD pipelines
-Distributed test execution
-Interview/demo projects
+@Before
+public void setUp(ITestContext context)
+
+
+Correct:
+
+@Before
+public void setUp(Scenario scenario)
+
+🧪 Sample Execution Flow
+Test starts
+Hook initializes driver
+Browser assigned dynamically
+Test runs on Grid
+Driver quits after scenario
+
+📊 Expected Grid Behavior
+Metric	Expected
+Nodes	6
+Sessions	6
+Queue	0
+Concurrency	100%
+
+🚀 CI/CD Integration
+Works with Jenkins pipelines
+Supports Docker-based execution
+Easy scaling in CI environments
+
+💡 Future Enhancements
+
+📊 Allure Reporting
+📸 Screenshot on failure
+🔁 Retry mechanism
+🌍 Environment config (QA/UAT)
+🔗 Jenkins parallel stages
+
+
+🧠 Interview Highlights
+You can explain:
+
+Built Selenium Grid using Docker
+Enabled parallel execution with TestNG
+Implemented ThreadLocal WebDriver
+Designed dynamic browser allocation
+Achieved optimal Grid utilization
 👨‍💻 Author
 
 Guruvaiya Muthukaruppan
-
-⭐ Support
-
-If you like this project:
-
-👉 Star the repo
-👉 Share with your team
-
-🎯 Final Note
-
-This framework demonstrates a modern, scalable, and production-ready test automation architecture using Selenium Grid and Docker.

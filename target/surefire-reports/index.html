@@ -25,7 +25,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 3 failed tests</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -38,8 +38,8 @@
       <div class="suite">
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
-            <a href="#" panel-name="suite-Suite" class="navigator-link">
-              <span class="suite-name border-passed">Suite</span>
+            <a href="#" panel-name="suite-CrossBrowser" class="navigator-link">
+              <span class="suite-name border-failed">CrossBrowser</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -49,37 +49,37 @@
             <div class="suite-section-content">
               <ul>
                 <li>
-                  <a href="#" panel-name="test-xml-Suite" class="navigator-link ">
+                  <a href="#" panel-name="test-xml-CrossBrowser" class="navigator-link ">
                     <span>C:\Jenkins\portable selenium-grid-framework-v1.0\portable-selenium-grid-framework\testng.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" panel-name="testlist-Suite" class="navigator-link ">
-                    <span class="test-stats">1 test</span>
+                  <a href="#" panel-name="testlist-CrossBrowser" class="navigator-link ">
+                    <span class="test-stats">2 tests</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" panel-name="group-Suite" class="navigator-link ">
+                  <a href="#" panel-name="group-CrossBrowser" class="navigator-link ">
                     <span>1 group</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" panel-name="times-Suite" class="navigator-link ">
+                  <a href="#" panel-name="times-CrossBrowser" class="navigator-link ">
                     <span>Times</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" panel-name="reporter-Suite" class="navigator-link ">
+                  <a href="#" panel-name="reporter-CrossBrowser" class="navigator-link ">
                     <span>Reporter output</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" panel-name="ignored-methods-Suite" class="navigator-link ">
+                  <a href="#" panel-name="ignored-methods-CrossBrowser" class="navigator-link ">
                     <span>Ignored methods</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" panel-name="chronological-Suite" class="navigator-link ">
+                  <a href="#" panel-name="chronological-CrossBrowser" class="navigator-link ">
                     <span>Chronological view</span>
                   </a> <!-- navigator-link  -->
                 </li>
@@ -92,31 +92,55 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">3 methods,   3 passed</span>
+                    <span class="method-stats">6 methods, 3 failed,   3 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-CrossBrowser" class="hide-methods failed suite-CrossBrowser"> (hide)</a> <!-- hide-methods failed suite-CrossBrowser -->
+                      <a href="#" panel-name="suite-CrossBrowser" class="show-methods failed suite-CrossBrowser"> (show)</a> <!-- show-methods failed suite-CrossBrowser -->
+                    </span>
+                    <div class="method-list-content failed suite-CrossBrowser">
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-CrossBrowser" title="com.automation.runners.TestRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Successful login&quot;, &quot;Login functionality&quot;)">runScenario("Successful login", "Login functionality")</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-CrossBrowser" title="com.automation.runners.TestRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Successful login&quot;, &quot;Login functionality&quot;)">runScenario("Successful login", "Login functionality")</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-CrossBrowser" title="com.automation.runners.TestRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Successful login&quot;, &quot;Login functionality&quot;)">runScenario("Successful login", "Login functionality")</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-CrossBrowser -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
                     <span class="show-or-hide-methods passed">
-                      <a href="#" panel-name="suite-Suite" class="hide-methods passed suite-Suite"> (hide)</a> <!-- hide-methods passed suite-Suite -->
-                      <a href="#" panel-name="suite-Suite" class="show-methods passed suite-Suite"> (show)</a> <!-- show-methods passed suite-Suite -->
+                      <a href="#" panel-name="suite-CrossBrowser" class="hide-methods passed suite-CrossBrowser"> (hide)</a> <!-- hide-methods passed suite-CrossBrowser -->
+                      <a href="#" panel-name="suite-CrossBrowser" class="show-methods passed suite-CrossBrowser"> (show)</a> <!-- show-methods passed suite-CrossBrowser -->
                     </span>
-                    <div class="method-list-content passed suite-Suite">
+                    <div class="method-list-content passed suite-CrossBrowser">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="com.automation.runners.TestRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Successful login&quot;, &quot;Login functionality&quot;)">runScenario("Successful login", "Login functionality")</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-CrossBrowser" title="com.automation.runners.TestRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Successful login&quot;, &quot;Login functionality&quot;)">runScenario("Successful login", "Login functionality")</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="com.automation.runners.TestRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Successful login&quot;, &quot;Login functionality&quot;)">runScenario("Successful login", "Login functionality")</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-CrossBrowser" title="com.automation.runners.TestRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Successful login&quot;, &quot;Login functionality&quot;)">runScenario("Successful login", "Login functionality")</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="com.automation.runners.TestRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Successful login&quot;, &quot;Login functionality&quot;)">runScenario("Successful login", "Login functionality")</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-CrossBrowser" title="com.automation.runners.TestRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Successful login&quot;, &quot;Login functionality&quot;)">runScenario("Successful login", "Login functionality")</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                    </div> <!-- method-list-content passed suite-Suite -->
+                    </div> <!-- method-list-content passed suite-CrossBrowser -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -127,8 +151,214 @@
     </div> <!-- navigator-root -->
     <div class="wrapper">
       <div class="main-panel-root">
-        <div panel-name="suite-Suite" class="panel Suite">
-          <div class="suite-Suite-class-passed">
+        <div panel-name="suite-CrossBrowser" class="panel CrossBrowser">
+          <div class="suite-CrossBrowser-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">com.automation.runners.TestRunner</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="runScenario(&quot;Successful login&quot;, &quot;Login functionality&quot;)">
+                  </a> <!-- runScenario("Successful login", "Login functionality") -->
+                  <span class="method-name">runScenario</span>
+                  <span class="parameters">("Successful login","Login functionality")</span>
+                  <div class="stack-trace">java.lang.RuntimeException: org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure. 
+Host info: host: &apos;AGASTHIYA&apos;, ip: &apos;192.168.0.106&apos;
+	at com.automation.core.DriverManager.initDriver(DriverManager.java:40)
+	at com.automation.hooks.Hooks.setUp(Hooks.java:29)
+Caused by: org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure. 
+Host info: host: &apos;AGASTHIYA&apos;, ip: &apos;192.168.0.106&apos;
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:536)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:232)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:161)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:141)
+	at com.automation.core.DriverManager.initDriver(DriverManager.java:25)
+	at com.automation.hooks.Hooks.setUp(Hooks.java:29)
+	at io.cucumber.java.Invoker.doInvoke(Invoker.java:66)
+	at io.cucumber.java.Invoker.invoke(Invoker.java:24)
+	at io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)
+	at io.cucumber.java.JavaHookDefinition.execute(JavaHookDefinition.java:64)
+	at io.cucumber.core.runner.CoreHookDefinition.execute(CoreHookDefinition.java:46)
+	at io.cucumber.core.runner.HookDefinitionMatch.runStep(HookDefinitionMatch.java:21)
+	at io.cucumber.core.runner.ExecutionMode$1.execute(ExecutionMode.java:10)
+	at io.cucumber.core.runner.TestStep.executeStep(TestStep.java:84)
+	at io.cucumber.core.runner.TestStep.run(TestStep.java:56)
+	at io.cucumber.core.runner.TestCase.run(TestCase.java:78)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:75)
+	at io.cucumber.testng.TestNGCucumberRunner.lambda$runScenario$1(TestNGCucumberRunner.java:132)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:137)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:137)
+	at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:129)
+	at io.cucumber.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:35)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1789)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
+	at java.base/java.lang.Thread.run(Thread.java:1516)
+Caused by: org.openqa.selenium.TimeoutException: java.util.concurrent.TimeoutException
+Build info: version: &apos;4.21.0&apos;, revision: &apos;79ed462ef4&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;26&apos;
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:399)
+	at org.openqa.selenium.remote.http.AddSeleniumUserAgent.lambda$apply$0(AddSeleniumUserAgent.java:42)
+	at org.openqa.selenium.remote.http.Filter.lambda$andFinally$1(Filter.java:55)
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute(JdkHttpClient.java:355)
+	at org.openqa.selenium.remote.tracing.TracedHttpClient.execute(TracedHttpClient.java:54)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:89)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:162)
+	at org.openqa.selenium.remote.TracedCommandExecutor.execute(TracedCommandExecutor.java:51)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+	... 34 more
+Caused by: java.util.concurrent.TimeoutException
+	at java.base/java.util.concurrent.CompletableFuture.timedGet(CompletableFuture.java:1981)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2116)
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:382)
+	... 44 more
+... Removed 8 stack frames
+</div> <!-- stack-trace -->
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="runScenario(&quot;Successful login&quot;, &quot;Login functionality&quot;)">
+                  </a> <!-- runScenario("Successful login", "Login functionality") -->
+                  <span class="method-name">runScenario</span>
+                  <span class="parameters">("Successful login","Login functionality")</span>
+                  <div class="stack-trace">java.lang.RuntimeException: org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure. 
+Host info: host: &apos;AGASTHIYA&apos;, ip: &apos;192.168.0.106&apos;
+	at com.automation.core.DriverManager.initDriver(DriverManager.java:40)
+	at com.automation.hooks.Hooks.setUp(Hooks.java:29)
+Caused by: org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure. 
+Host info: host: &apos;AGASTHIYA&apos;, ip: &apos;192.168.0.106&apos;
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:536)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:232)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:161)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:141)
+	at com.automation.core.DriverManager.initDriver(DriverManager.java:25)
+	at com.automation.hooks.Hooks.setUp(Hooks.java:29)
+	at io.cucumber.java.Invoker.doInvoke(Invoker.java:66)
+	at io.cucumber.java.Invoker.invoke(Invoker.java:24)
+	at io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)
+	at io.cucumber.java.JavaHookDefinition.execute(JavaHookDefinition.java:64)
+	at io.cucumber.core.runner.CoreHookDefinition.execute(CoreHookDefinition.java:46)
+	at io.cucumber.core.runner.HookDefinitionMatch.runStep(HookDefinitionMatch.java:21)
+	at io.cucumber.core.runner.ExecutionMode$1.execute(ExecutionMode.java:10)
+	at io.cucumber.core.runner.TestStep.executeStep(TestStep.java:84)
+	at io.cucumber.core.runner.TestStep.run(TestStep.java:56)
+	at io.cucumber.core.runner.TestCase.run(TestCase.java:78)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:75)
+	at io.cucumber.testng.TestNGCucumberRunner.lambda$runScenario$1(TestNGCucumberRunner.java:132)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:137)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:137)
+	at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:129)
+	at io.cucumber.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:35)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1789)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
+	at java.base/java.lang.Thread.run(Thread.java:1516)
+Caused by: org.openqa.selenium.TimeoutException: java.util.concurrent.TimeoutException
+Build info: version: &apos;4.21.0&apos;, revision: &apos;79ed462ef4&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;26&apos;
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:399)
+	at org.openqa.selenium.remote.http.AddSeleniumUserAgent.lambda$apply$0(AddSeleniumUserAgent.java:42)
+	at org.openqa.selenium.remote.http.Filter.lambda$andFinally$1(Filter.java:55)
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute(JdkHttpClient.java:355)
+	at org.openqa.selenium.remote.tracing.TracedHttpClient.execute(TracedHttpClient.java:54)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:89)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:162)
+	at org.openqa.selenium.remote.TracedCommandExecutor.execute(TracedCommandExecutor.java:51)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+	... 34 more
+Caused by: java.util.concurrent.TimeoutException
+	at java.base/java.util.concurrent.CompletableFuture.timedGet(CompletableFuture.java:1981)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2116)
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:382)
+	... 44 more
+... Removed 8 stack frames
+</div> <!-- stack-trace -->
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="runScenario(&quot;Successful login&quot;, &quot;Login functionality&quot;)">
+                  </a> <!-- runScenario("Successful login", "Login functionality") -->
+                  <span class="method-name">runScenario</span>
+                  <span class="parameters">("Successful login","Login functionality")</span>
+                  <div class="stack-trace">java.lang.RuntimeException: org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure. 
+Host info: host: &apos;AGASTHIYA&apos;, ip: &apos;192.168.0.106&apos;
+	at com.automation.core.DriverManager.initDriver(DriverManager.java:40)
+	at com.automation.hooks.Hooks.setUp(Hooks.java:29)
+Caused by: org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure. 
+Host info: host: &apos;AGASTHIYA&apos;, ip: &apos;192.168.0.106&apos;
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:536)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:232)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:161)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:141)
+	at com.automation.core.DriverManager.initDriver(DriverManager.java:25)
+	at com.automation.hooks.Hooks.setUp(Hooks.java:29)
+	at io.cucumber.java.Invoker.doInvoke(Invoker.java:66)
+	at io.cucumber.java.Invoker.invoke(Invoker.java:24)
+	at io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)
+	at io.cucumber.java.JavaHookDefinition.execute(JavaHookDefinition.java:64)
+	at io.cucumber.core.runner.CoreHookDefinition.execute(CoreHookDefinition.java:46)
+	at io.cucumber.core.runner.HookDefinitionMatch.runStep(HookDefinitionMatch.java:21)
+	at io.cucumber.core.runner.ExecutionMode$1.execute(ExecutionMode.java:10)
+	at io.cucumber.core.runner.TestStep.executeStep(TestStep.java:84)
+	at io.cucumber.core.runner.TestStep.run(TestStep.java:56)
+	at io.cucumber.core.runner.TestCase.run(TestCase.java:78)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:75)
+	at io.cucumber.testng.TestNGCucumberRunner.lambda$runScenario$1(TestNGCucumberRunner.java:132)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:137)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:137)
+	at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:129)
+	at io.cucumber.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:35)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1789)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
+	at java.base/java.lang.Thread.run(Thread.java:1516)
+Caused by: org.openqa.selenium.TimeoutException: java.util.concurrent.TimeoutException
+Build info: version: &apos;4.21.0&apos;, revision: &apos;79ed462ef4&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;26&apos;
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:399)
+	at org.openqa.selenium.remote.http.AddSeleniumUserAgent.lambda$apply$0(AddSeleniumUserAgent.java:42)
+	at org.openqa.selenium.remote.http.Filter.lambda$andFinally$1(Filter.java:55)
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute(JdkHttpClient.java:355)
+	at org.openqa.selenium.remote.tracing.TracedHttpClient.execute(TracedHttpClient.java:54)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:89)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:162)
+	at org.openqa.selenium.remote.TracedCommandExecutor.execute(TracedCommandExecutor.java:51)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+	... 34 more
+Caused by: java.util.concurrent.TimeoutException
+	at java.base/java.util.concurrent.CompletableFuture.timedGet(CompletableFuture.java:1981)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2116)
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:382)
+	... 44 more
+... Removed 8 stack frames
+</div> <!-- stack-trace -->
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-CrossBrowser-class-failed -->
+          <div class="suite-CrossBrowser-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
               <span class="class-name">com.automation.runners.TestRunner</span>
@@ -165,9 +395,9 @@
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Suite-class-passed -->
-        </div> <!-- panel Suite -->
-        <div panel-name="test-xml-Suite" class="panel">
+          </div> <!-- suite-CrossBrowser-class-passed -->
+        </div> <!-- panel CrossBrowser -->
+        <div panel-name="test-xml-CrossBrowser" class="panel">
           <div class="main-panel-header rounded-window-top">
             <span class="header-content">C:\Jenkins\portable selenium-grid-framework-v1.0\portable-selenium-grid-framework\testng.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
@@ -175,31 +405,41 @@
             <pre>
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
-&lt;suite thread-count=&quot;3&quot; parallel=&quot;methods&quot; name=&quot;Suite&quot; guice-stage=&quot;DEVELOPMENT&quot; verbose=&quot;0&quot;&gt;
-  &lt;test thread-count=&quot;3&quot; parallel=&quot;methods&quot; name=&quot;CucumberTests&quot; verbose=&quot;0&quot;&gt;
+&lt;suite thread-count=&quot;6&quot; parallel=&quot;tests&quot; name=&quot;CrossBrowser&quot; guice-stage=&quot;DEVELOPMENT&quot; verbose=&quot;0&quot;&gt;
+  &lt;test thread-count=&quot;6&quot; parallel=&quot;tests&quot; name=&quot;ChromeTests&quot; verbose=&quot;0&quot;&gt;
+    &lt;parameter name=&quot;browser&quot; value=&quot;chrome&quot;/&gt;
     &lt;classes&gt;
       &lt;class name=&quot;com.automation.runners.TestRunner&quot;/&gt;
     &lt;/classes&gt;
-  &lt;/test&gt; &lt;!-- CucumberTests --&gt;
-&lt;/suite&gt; &lt;!-- Suite --&gt;
+  &lt;/test&gt; &lt;!-- ChromeTests --&gt;
+  &lt;test thread-count=&quot;6&quot; parallel=&quot;tests&quot; name=&quot;FirefoxTests&quot; verbose=&quot;0&quot;&gt;
+    &lt;parameter name=&quot;browser&quot; value=&quot;firefox&quot;/&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;com.automation.runners.TestRunner&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- FirefoxTests --&gt;
+&lt;/suite&gt; &lt;!-- CrossBrowser --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
-        <div panel-name="testlist-Suite" class="panel">
+        <div panel-name="testlist-CrossBrowser" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">Tests for Suite</span>
+            <span class="header-content">Tests for CrossBrowser</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">CucumberTests (1 class)</span>
+                <span class="test-name">ChromeTests (1 class)</span>
+              </li>
+              <li>
+                <span class="test-name">FirefoxTests (1 class)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
-        <div panel-name="group-Suite" class="panel">
+        <div panel-name="group-CrossBrowser" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">Groups for Suite</span>
+            <span class="header-content">Groups for CrossBrowser</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="test-group">
@@ -212,58 +452,70 @@
             </div> <!-- test-group -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
-        <div panel-name="times-Suite" class="panel">
+        <div panel-name="times-CrossBrowser" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">Times for Suite</span>
+            <span class="header-content">Times for CrossBrowser</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="times-div">
               <script type="text/javascript">
-suiteTableInitFunctions.push('tableData_Suite');
-function tableData_Suite() {
+suiteTableInitFunctions.push('tableData_CrossBrowser');
+function tableData_CrossBrowser() {
 var data = new google.visualization.DataTable();
 data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(3);
+data.addRows(6);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'runScenario')
 data.setCell(0, 2, 'com.automation.runners.TestRunner')
-data.setCell(0, 3, 54532);
+data.setCell(0, 3, 182058);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'runScenario')
 data.setCell(1, 2, 'com.automation.runners.TestRunner')
-data.setCell(1, 3, 54532);
+data.setCell(1, 3, 182058);
 data.setCell(2, 0, 2)
 data.setCell(2, 1, 'runScenario')
 data.setCell(2, 2, 'com.automation.runners.TestRunner')
-data.setCell(2, 3, 54532);
-window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
+data.setCell(2, 3, 182058);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'runScenario')
+data.setCell(3, 2, 'com.automation.runners.TestRunner')
+data.setCell(3, 3, 71057);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'runScenario')
+data.setCell(4, 2, 'com.automation.runners.TestRunner')
+data.setCell(4, 3, 71057);
+data.setCell(5, 0, 5)
+data.setCell(5, 1, 'runScenario')
+data.setCell(5, 2, 'com.automation.runners.TestRunner')
+data.setCell(5, 3, 71057);
+window.suiteTableData['CrossBrowser']= { tableData: data, tableDiv: 'times-div-CrossBrowser'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 2 minutes</span>
-              <div id="times-div-Suite">
-              </div> <!-- times-div-Suite -->
+              <span class="suite-total-time">Total running time: 3 minutes</span>
+              <div id="times-div-CrossBrowser">
+              </div> <!-- times-div-CrossBrowser -->
             </div> <!-- times-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
-        <div panel-name="reporter-Suite" class="panel">
+        <div panel-name="reporter-CrossBrowser" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">Reporter output for Suite</span>
+            <span class="header-content">Reporter output for CrossBrowser</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
-        <div panel-name="ignored-methods-Suite" class="panel">
+        <div panel-name="ignored-methods-CrossBrowser" class="panel">
           <div class="main-panel-header rounded-window-top">
             <span class="header-content">0 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
-        <div panel-name="chronological-Suite" class="panel">
+        <div panel-name="chronological-CrossBrowser" class="panel">
           <div class="main-panel-header rounded-window-top">
             <span class="header-content">Methods in chronological order</span>
           </div> <!-- main-panel-header rounded-window-top -->
@@ -271,24 +523,50 @@ return data;
             <div class="chronological-class">
               <div class="chronological-class-name">com.automation.runners.TestRunner</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
-                <span class="method-name">setUpClass(org.testng.TestRunner@36bc55de)</span>
+                <span class="method-name">setUpClass(org.testng.TestRunner@1dde4cb2)</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="configuration-class before">
+                <span class="method-name">setUpClass(org.testng.TestRunner@7714e963)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">runScenario("Successful login", "Login functionality")</span>
-                <span class="method-start">492 ms</span>
+                <span class="method-start">1250 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">runScenario("Successful login", "Login functionality")</span>
+                <span class="method-start">1250 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">runScenario("Successful login", "Login functionality")</span>
-                <span class="method-start">492 ms</span>
+                <span class="method-start">1250 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">runScenario("Successful login", "Login functionality")</span>
+                <span class="method-start">1250 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">runScenario("Successful login", "Login functionality")</span>
-                <span class="method-start">492 ms</span>
+                <span class="method-start">1250 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">runScenario("Successful login", "Login functionality")</span>
+                <span class="method-start">1250 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">tearDownClass</span>
-                <span class="method-start">55160 ms</span>
+                <span class="method-start">183562 ms</span>
+              </div> <!-- configuration-class after -->
+              <div class="configuration-class after">
+                <span class="method-name">tearDownClass</span>
+                <span class="method-start">183562 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

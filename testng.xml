@@ -1,8 +1,16 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 
-<suite name="Suite" parallel="methods" thread-count="3">
+<suite name="CrossBrowser" parallel="tests" thread-count="6">
 
-    <test name="CucumberTests">
+    <test name="ChromeTests">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="com.automation.runners.TestRunner"/>
+        </classes>
+    </test>
+
+    <test name="FirefoxTests">
+        <parameter name="browser" value="firefox"/>
         <classes>
             <class name="com.automation.runners.TestRunner"/>
         </classes>

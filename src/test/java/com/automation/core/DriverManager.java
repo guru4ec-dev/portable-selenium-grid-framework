@@ -1,36 +1,43 @@
 package com.automation.core;
 
-import java.net.URL;
+import java.net.URI;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxOptions;
 
 public class DriverManager {
 
-    private static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
+        private static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
 
-    public static void initDriver() {
+        public static void initDriver(String browser){
+
         try {
-            String execution = System.getProperty("execution", "local");
+            String execution = System.getProperty("execution", "remote");
 
             if (execution.equalsIgnoreCase("remote")) {
 
-                ChromeOptions options = new ChromeOptions();
-                options.addArguments("--start-maximized");
+                if (browser.equalsIgnoreCase("chrome")) {
+                    ChromeOptions options = new ChromeOptions();
+                    options.setPlatformName("LINUX");
 
-                driver.set(new RemoteWebDriver(
-                        new URL("http://localhost:4444/wd/hub"),
-                        options
-                ));
+                    driver.set(new RemoteWebDriver(
+                            URI.create("http://localhost:4444").toURL(),
+                            options
+                    ));
 
-            } else {
-                driver.set(new ChromeDriver());
+                } else if (browser.equalsIgnoreCase("firefox")) {
+                    FirefoxOptions options = new FirefoxOptions();
+                    options.setPlatformName("LINUX");
+
+                    driver.set(new RemoteWebDriver(
+                            URI.create("http://localhost:4444").toURL(),
+                            options
+                    ));
+                }
             }
-
         } catch (Exception e) {
-            e.printStackTrace();
-            throw new RuntimeException("Failed to initialize WebDriver", e);
+            throw new RuntimeException(e);
         }
     }
 
