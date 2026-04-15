@@ -1,6 +1,6 @@
 🚀 Portable Selenium Grid Automation Framework
 
-
+Implemented parallel execution using TestNG and achieved distributed execution by scaling Selenium Grid nodes using Docker. Each test runs on a separate containerized browser instance, ensuring true parallelism and scalability.
 
 📌 Overview
 

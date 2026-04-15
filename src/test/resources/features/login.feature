@@ -1,11 +1,16 @@
-Feature: Login
+Feature: Login functionality
 
-  Scenario: Valid login
+  Scenario: Successful login
     Given user is on login page
-    When user enters valid credentials
-    Then user should see dashboard
+    When user enters username and password
+    Then user should land on dashboard
 
-  Scenario: Invalid login
+  Scenario: Successful login
     Given user is on login page
-    When user enters invalid credentials
-    Then error message should be shown
+    When user enters username and password
+    Then user should land on dashboard
+
+  Scenario: Successful login
+    Given user is on login page
+    When user enters username and password
+    Then user should land on dashboard

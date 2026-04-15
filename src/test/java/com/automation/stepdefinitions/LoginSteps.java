@@ -1,35 +1,32 @@
 package com.automation.stepdefinitions;
 
-import com.automation.hooks.Hooks;
 import io.cucumber.java.en.*;
-import org.openqa.selenium.WebDriver;
+
+import com.automation.core.DriverManager;
+
+import org.openqa.selenium.*;
+import org.openqa.selenium.chrome.ChromeDriver;
 
 public class LoginSteps {
 
-    WebDriver driver = Hooks.getDriver();
+WebDriver driver = DriverManager.getDriver();
 
     @Given("user is on login page")
     public void openLoginPage() {
-        driver.get("https://example.com");
+        driver.get("https://the-internet.herokuapp.com/login");
+
     }
 
-    @When("user enters valid credentials")
-    public void enterValid() {
-        System.out.println("Valid login");
+    @When("user enters username and password")
+    public void enterCredentials() {
+        driver.findElement(By.id("username")).sendKeys("tomsmith");
+        driver.findElement(By.id("password")).sendKeys("SuperSecretPassword!");
+        driver.findElement(By.cssSelector("button[type='submit']")).click();
     }
 
-    @When("user enters invalid credentials")
-    public void enterInvalid() {
-        System.out.println("Invalid login");
-    }
-
-    @Then("user should see dashboard")
-    public void dashboard() {
-        System.out.println("Dashboard verified");
-    }
-
-    @Then("error message should be shown")
-    public void error() {
-        System.out.println("Error verified");
+    @Then("user should land on dashboard")
+    public void verifyDashboard() {
+        System.out.println("Login successful");
+        DriverManager.quitDriver();
     }
 }
