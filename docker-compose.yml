@@ -17,7 +17,7 @@ services:
       start_period: 15s
 
   chrome:
-    image: selenium/node-chrome:latest
+    image: selenium/node-chrome:4.21.0
     depends_on:
       selenium-hub:
         condition: service_healthy
@@ -25,10 +25,12 @@ services:
       - SE_EVENT_BUS_HOST=selenium-hub
       - SE_EVENT_BUS_PUBLISH_PORT=4442
       - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+      - SE_NODE_MAX_SESSIONS=3
+      - SE_NODE_OVERRIDE_MAX_SESSIONS=true
     shm_size: 2gb
 
   firefox:
-    image: selenium/node-firefox:latest
+    image: selenium/node-firefox:4.21.0
     depends_on:
       selenium-hub:
         condition: service_healthy
@@ -36,6 +38,8 @@ services:
       - SE_EVENT_BUS_HOST=selenium-hub
       - SE_EVENT_BUS_PUBLISH_PORT=4442
       - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+      - SE_NODE_MAX_SESSIONS=3
+      - SE_NODE_OVERRIDE_MAX_SESSIONS=true
     shm_size: 2gb
 
   chrome-tests:
