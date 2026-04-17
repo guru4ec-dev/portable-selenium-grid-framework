@@ -18,8 +18,7 @@ jobs:
         run: mkdir -p reports
 
       - name: Run Chrome Tests
-        run: docker compose up --build --abort-on-container-exit --exit-code-from chrome-tests chrome-tests
-        continue-on-error: true
+        run: docker compose up --build --scale chrome=3 --abort-on-container-exit --exit-code-from chrome-tests chrome-tests
 
       - name: Debug Reports Folder
         run: |
@@ -49,8 +48,7 @@ jobs:
         run: mkdir -p reports
 
       - name: Run Firefox Tests
-        run: docker compose up --build --abort-on-container-exit --exit-code-from firefox-tests firefox-tests
-        continue-on-error: true
+        run: docker compose up --build --scale firefox=3 --abort-on-container-exit --exit-code-from firefox-tests firefox-tests
 
       - name: Debug Reports Folder
         run: |
