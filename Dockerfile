@@ -6,4 +6,4 @@ COPY . .
 
 RUN mvn dependency:resolve
 
-CMD ["mvn", "clean", "test"]
+CMD ["mvn", "clean", "verify"]
