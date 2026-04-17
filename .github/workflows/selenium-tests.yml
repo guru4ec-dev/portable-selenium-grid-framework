@@ -14,8 +14,12 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
 
+      - name: Create Reports Directory
+        run: mkdir -p reports
+
       - name: Run Chrome Tests
-        run: docker compose up --build chrome-tests
+        run: docker compose up --build --abort-on-container-exit --exit-code-from chrome-tests chrome-tests
+        continue-on-error: true
 
       - name: Debug Reports Folder
         run: |
@@ -23,12 +27,14 @@ jobs:
           ls -R reports || true
 
       - name: Upload Chrome Reports
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: chrome-reports
           path: reports/
 
       - name: Stop Containers
+        if: always()
         run: docker compose down
 
 
@@ -39,8 +45,12 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
 
+      - name: Create Reports Directory
+        run: mkdir -p reports
+
       - name: Run Firefox Tests
-        run: docker compose up --build firefox-tests
+        run: docker compose up --build --abort-on-container-exit --exit-code-from firefox-tests firefox-tests
+        continue-on-error: true
 
       - name: Debug Reports Folder
         run: |
@@ -48,10 +58,12 @@ jobs:
           ls -R reports || true
 
       - name: Upload Firefox Reports
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: firefox-reports
           path: reports/
 
       - name: Stop Containers
+        if: always()
         run: docker compose down

@@ -17,12 +17,16 @@ public class DriverManager {
 
             if (execution.equalsIgnoreCase("remote")) {
 
+                String gridUrl = System.getenv("GRID_URL") != null
+                        ? System.getenv("GRID_URL")
+                        : System.getProperty("gridUrl", "http://localhost:4444");
+
                 if (browser.equalsIgnoreCase("chrome")) {
                     ChromeOptions options = new ChromeOptions();
                     options.setPlatformName("LINUX");
 
                     driver.set(new RemoteWebDriver(
-                            URI.create("http://localhost:4444").toURL(),
+                            URI.create(gridUrl).toURL(),
                             options
                     ));
 
@@ -31,7 +35,7 @@ public class DriverManager {
                     options.setPlatformName("LINUX");
 
                     driver.set(new RemoteWebDriver(
-                            URI.create("http://localhost:4444").toURL(),
+                            URI.create(gridUrl).toURL(),
                             options
                     ));
                 }
