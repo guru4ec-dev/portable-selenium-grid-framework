@@ -37,7 +37,7 @@ services:
       - chrome
     environment:
       - GRID_URL=http://selenium-hub:4444
-    command: sh -c "echo 'Waiting for Selenium Grid...' && until curl -sf http://selenium-hub:4444/wd/hub/status | grep -q '\"ready\":true'; do echo 'Grid not ready, retrying...'; sleep 3; done && echo 'Grid is ready!' && mvn verify -Dbrowser=chrome -Dheadless=false -DlogLevel=INFO"
+    command: sh -c "echo 'Waiting for Selenium Grid...' && until curl -sf http://selenium-hub:4444/wd/hub/status | grep -q '\"ready\":\s*true'; do echo 'Grid not ready, retrying...'; sleep 3; done && echo 'Grid is ready!' && mvn verify -Dbrowser=chrome -Dheadless=false -DlogLevel=INFO"
     volumes:
       - ./reports/chrome:/app/target/cucumber-html-reports
 
@@ -48,6 +48,6 @@ services:
       - firefox
     environment:
       - GRID_URL=http://selenium-hub:4444
-    command: sh -c "echo 'Waiting for Selenium Grid...' && until curl -sf http://selenium-hub:4444/wd/hub/status | grep -q '\"ready\":true'; do echo 'Grid not ready, retrying...'; sleep 3; done && echo 'Grid is ready!' && mvn verify -Dbrowser=firefox -Dheadless=false -DlogLevel=INFO"
+    command: sh -c "echo 'Waiting for Selenium Grid...' && until curl -sf http://selenium-hub:4444/wd/hub/status | grep -q '\"ready\":\s*true'; do echo 'Grid not ready, retrying...'; sleep 3; done && echo 'Grid is ready!' && mvn verify -Dbrowser=firefox -Dheadless=false -DlogLevel=INFO"
     volumes:
       - ./reports/firefox:/app/target/cucumber-html-reports
