@@ -19,8 +19,14 @@ public class ExcelUtils {
     public static List<Map<String, String>> getTestData(String fileName, String sheetName) {
         List<Map<String, String>> data = new ArrayList<>();
 
-        try (InputStream is = ExcelUtils.class.getClassLoader().getResourceAsStream(fileName);
-             Workbook workbook = new XSSFWorkbook(is)) {
+        try {
+            InputStream is = ExcelUtils.class.getClassLoader().getResourceAsStream(fileName);
+            if (is == null) {
+                // fallback: read directly from src/test/resources (useful before Maven copies resources)
+                is = new FileInputStream("src/test/resources/" + fileName);
+            }
+
+            try (Workbook workbook = new XSSFWorkbook(is)) {
 
             Sheet sheet = workbook.getSheet(sheetName);
             Row headerRow = sheet.getRow(0);
@@ -38,6 +44,8 @@ public class ExcelUtils {
                 }
                 data.add(rowData);
             }
+
+            } // end try-with-resources workbook
 
         } catch (Exception e) {
             throw new RuntimeException("Failed to read Excel file: " + fileName, e);
@@ -61,13 +69,13 @@ public class ExcelUtils {
      * Call this once from a @BeforeSuite or setup method.
      */
     public static void createLoginTestDataIfNeeded() {
-        URL resource = ExcelUtils.class.getClassLoader().getResource("testdata/login_data.xlsx");
-        if (resource != null) return; // already exists
+        // Write to src/test/resources/testdata so it's always available on classpath
+        String basePath = "src/test/resources/testdata/login_data.xlsx";
+        File file = new File(basePath);
 
-        String resourceDir = ExcelUtils.class.getClassLoader()
-                .getResource("").getPath() + "testdata";
-        new File(resourceDir).mkdirs();
-        String filePath = resourceDir + "/login_data.xlsx";
+        if (file.exists()) return;
+
+        file.getParentFile().mkdirs();
 
         try (Workbook workbook = new XSSFWorkbook()) {
             Sheet sheet = workbook.createSheet("LoginTests");
@@ -93,11 +101,11 @@ public class ExcelUtils {
                 }
             }
 
-            try (FileOutputStream fos = new FileOutputStream(filePath)) {
+            try (FileOutputStream fos = new FileOutputStream(file)) {
                 workbook.write(fos);
             }
 
-            System.out.println("[ExcelUtils] Created test data file: " + filePath);
+            System.out.println("[ExcelUtils] Created test data file: " + file.getAbsolutePath());
 
         } catch (Exception e) {
             throw new RuntimeException("Failed to create test data file", e);
