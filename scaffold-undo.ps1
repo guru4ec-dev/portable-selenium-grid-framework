@@ -102,5 +102,5 @@ if ($anyFound) {
     Write-Host ""
     Write-Host "Reminder: if you added a '$name' sheet to testdata.xlsx, remove that manually." -ForegroundColor Yellow
 } else {
-    Write-Host "Nothing to undo — no files found for feature: $name" -ForegroundColor Red
+    Write-Host "Nothing to undo - no files found for feature: $name" -ForegroundColor Red
 }
