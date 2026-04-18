@@ -25,8 +25,8 @@ public class LoginSteps {
     public void verifyDashboard() {
         LoginPage loginPage = new LoginPage(DriverManager.getDriver());
         String currentUrl = loginPage.getCurrentUrl();
-        Assert.assertTrue(currentUrl.contains("/secure"),
-                "Expected dashboard URL to contain '/secure' but got: " + currentUrl);
+        Assert.assertTrue(currentUrl.contains("/wrong"),
+                "Expected dashboard URL to contain '/wrong' but got: " + currentUrl);
         System.out.println("Login successful - URL: " + currentUrl);
     }
 }
