@@ -1,16 +1,12 @@
 Feature: Login functionality
 
-  Scenario: Successful login
+  Scenario Outline: Login - <testCaseId>
     Given user is on login page
-    When user enters username and password
-    Then user should land on dashboard
+    When user logs in with test case "<testCaseId>"
+    Then login result should be "<expectedResult>"
 
-  Scenario: Successful login
-    Given user is on login page
-    When user enters username and password
-    Then user should land on dashboard
-
-  Scenario: Successful login
-    Given user is on login page
-    When user enters username and password
-    Then user should land on dashboard
+    Examples:
+      | testCaseId      | expectedResult |
+      | ValidLogin      | success        |
+      | InvalidPassword | failure        |
+      | InvalidUsername | failure        |

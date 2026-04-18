@@ -37,7 +37,11 @@ public class LoginPage {
     }
 
     public String getFlashMessage() {
-        return flashMessage.getText();
+        try {
+            return flashMessage.getText();
+        } catch (Exception e) {
+            return "";
+        }
     }
 
     public String getCurrentUrl() {
