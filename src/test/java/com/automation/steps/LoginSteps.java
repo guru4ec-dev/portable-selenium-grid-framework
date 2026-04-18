@@ -12,7 +12,8 @@ import java.util.Map;
 
 public class LoginSteps {
 
-    private static final String DATA_FILE = "testdata/login_data.csv";
+    private static final String DATA_FILE  = "testdata/testdata.xlsx";
+    private static final String SHEET_NAME = "Login";
 
     @Given("user is on login page")
     public void openLoginPage() {
@@ -21,12 +22,10 @@ public class LoginSteps {
 
     @When("user logs in with test case {string}")
     public void loginWithTestCase(String testCaseId) {
-        Map<String, String> data = ExcelUtils.getTestDataById(DATA_FILE, testCaseId);
-        String username = data.get("Username");
-        String password = data.get("Password");
+        Map<String, String> data = ExcelUtils.getTestDataById(DATA_FILE, SHEET_NAME, testCaseId);
         System.out.println("[DataDriven] TestCase: " + testCaseId +
-                           " | Username: " + username + " | Password: " + password);
-        new LoginPage(DriverManager.getDriver()).login(username, password);
+                           " | Username: " + data.get("Username"));
+        new LoginPage(DriverManager.getDriver()).login(data.get("Username"), data.get("Password"));
     }
 
     @Then("login result should be {string}")
@@ -35,12 +34,10 @@ public class LoginSteps {
         if (expectedResult.equals("success")) {
             Assert.assertTrue(loginPage.getCurrentUrl().contains("/secure"),
                     "Expected /secure URL but got: " + loginPage.getCurrentUrl());
-            System.out.println("Login successful - URL: " + loginPage.getCurrentUrl());
         } else {
             String flash = loginPage.getFlashMessage();
             Assert.assertTrue(flash.contains("Your username is invalid") || flash.contains("Your password is invalid"),
                     "Expected error message but got: " + flash);
-            System.out.println("Login failed as expected - Message: " + flash);
         }
     }
 }

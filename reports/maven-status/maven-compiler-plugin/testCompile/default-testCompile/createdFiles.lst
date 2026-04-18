@@ -1,5 +1,0 @@
-com/automation/stepdefinitions/LoginSteps.class
-com/automation/utils/DriverFactory.class
-com/automation/core/DriverManager.class
-com/automation/runners/TestRunner.class
-com/automation/hooks/Hooks.class

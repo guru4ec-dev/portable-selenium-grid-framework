@@ -1,0 +1,22 @@
+# Maven build output
+target/
+
+# Generated reports (downloaded from GitHub Actions / Jenkins artifacts)
+reports/
+
+# Node.js (used for local tooling only)
+node_modules/
+package-lock.json
+package.json
+
+# IDE files
+.idea/
+*.iml
+.classpath
+.project
+.settings/
+*.class
+
+# OS files
+.DS_Store
+Thumbs.db
