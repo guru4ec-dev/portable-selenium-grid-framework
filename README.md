@@ -29,7 +29,7 @@ src/
     │   ├── core/
     │   │   └── DriverManager.java       ← ThreadLocal WebDriver + retry logic
     │   ├── hooks/
-    │   │   └── Hooks.java               ← Before/After + screenshot on failure
+    │   │   └── Hooks.java               ← Before/After + configurable screenshot capture
     │   ├── pages/
     │   │   └── LoginPage.java           ← Page Object Model (PageFactory)
     │   ├── runners/
@@ -97,18 +97,27 @@ Scenario: InvalidUser   →  wronguser / SuperSecretPassword! / failure
 
 To add new test cases — add a row to the CSV and a line in the `Examples` table.
 
-### 4. Screenshot on Failure
-Automatically captures and embeds a screenshot in the HTML report when a scenario fails.
+### 4. Configurable Screenshot Capture
+Screenshot behaviour is controlled by the `-Dscreenshot.mode` property.
 
-```java
-@After
-public void tearDown(Scenario scenario) {
-    if (scenario.isFailed()) {
-        byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
-        scenario.attach(screenshot, "image/png", "failure-screenshot");
-    }
-}
+| `screenshot.mode` | When screenshot is taken |
+|---|---|
+| `failure` (default) | End of scenario, only if it failed |
+| `step-all` | After every step (passed + failed) |
+| `step-failed` | After each individual step that fails |
+
+```bash
+# Default — screenshot only on scenario failure
+mvn verify -Dbrowser=chrome
+
+# Screenshot after every step
+mvn verify -Dbrowser=chrome -Dscreenshot.mode=step-all
+
+# Screenshot only after each failed step
+mvn verify -Dbrowser=chrome -Dscreenshot.mode=step-failed
 ```
+
+All screenshots are embedded directly in the HTML report alongside the relevant step.
 
 ### 5. Session Retry Logic
 `DriverManager` retries session creation up to 5 times with 10s delay if the Grid node is not ready.
@@ -119,7 +128,19 @@ Prevents `SessionNotCreatedException` caused by race conditions at startup.
 
 ### 7. Parallel Execution
 Chrome and Firefox test containers run **simultaneously** in GitHub Actions (separate jobs).
-Scenarios within each container run in parallel using `@DataProvider(parallel = true)`.
+Within each container, scenarios run in parallel via `@DataProvider(parallel = true)` in `TestRunner.java`.
+
+**How parallelism works:**  
+There is only one `@Test` method (`scenarios()`) in the suite, so TestNG-level `parallel="methods"` is intentionally **not used** — it would have no effect. All concurrency is handled exclusively by `data-provider-thread-count`, which caps how many scenarios the DataProvider runs simultaneously.
+
+`data-provider-thread-count` is kept equal to `SE_NODE_MAX_SESSIONS` so threads never exceed Grid session capacity — extra scenarios queue and run as sessions free up.
+
+To scale up, increase both values together:
+
+| Setting | Location | Default |
+|---|---|---|
+| `data-provider-thread-count` | `testng.xml` | `3` |
+| `SE_NODE_MAX_SESSIONS` | `docker-compose.yml` | `3` |
 
 ---
 
@@ -204,7 +225,7 @@ GitHub Actions workflow (`.github/workflows/selenium-tests.yml`):
 - Implemented hybrid BDD + Data-Driven framework (Cucumber + CSV)  
 - Designed Page Object Model with PageFactory for maintainable locators
 - Achieved thread-safe parallel execution with ThreadLocal WebDriver
-- Added automatic screenshot capture on failure embedded in HTML report
+- Configurable screenshot capture: per-scenario failure, per-step (all), or per-step (failed only)
 - Implemented session retry logic for flake-resistant Grid connections
 - Set up GitHub Actions CI/CD with artifact-based HTML report delivery
 

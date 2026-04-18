@@ -1,19 +1,12 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 
-<suite name="CrossBrowser" parallel="tests" thread-count="6">
-
-    <test name="ChromeTests">
-        <parameter name="browser" value="chrome"/>
+<!-- data-provider-thread-count caps concurrent scenario threads spawned by @DataProvider(parallel=true).
+     Must not exceed SE_NODE_MAX_SESSIONS on the Grid node (currently 3).
+     parallel="methods" is not needed here — there is only one @Test method (scenarios()). -->
+<suite name="Suite" parallel="none" data-provider-thread-count="3">
+    <test name="Tests">
         <classes>
             <class name="com.automation.runners.TestRunner"/>
         </classes>
     </test>
-
-    <test name="FirefoxTests">
-        <parameter name="browser" value="firefox"/>
-        <classes>
-            <class name="com.automation.runners.TestRunner"/>
-        </classes>
-    </test>
-
 </suite>
