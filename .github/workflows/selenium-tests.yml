@@ -2,6 +2,10 @@ name: Selenium Grid Tests
 
 on:
   workflow_dispatch:
+  # Uncomment below to enable automatic run on every push to main
+  # push:
+  #   branches:
+  #     - main
 
 jobs:
 

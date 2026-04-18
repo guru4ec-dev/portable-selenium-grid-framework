@@ -1,201 +1,215 @@
-🚀 Selenium Grid Automation Framework (Docker + Parallel + Multi-Browser)
-📌 Overview
+# Selenium Grid Automation Framework
+## Docker + Parallel + Multi-Browser + BDD + Data-Driven
 
-This project is a scalable Selenium automation framework built with:
+---
 
-✅ Java + Selenium 4
-✅ Cucumber (BDD)
-✅ TestNG (Parallel execution)
-✅ Docker-based Selenium Grid
-✅ CI/CD ready (Jenkins compatible)
+## Overview
 
-It supports:
+A portable, scalable Selenium automation framework with zero local installation required.
+Tests run entirely in the cloud via **GitHub Actions** — just push code and download reports.
 
-🔁 Parallel execution
-🌐 Cross-browser testing (Chrome + Firefox)
-📦 Containerized Grid (Docker)
-⚡ Dynamic browser allocation
-🏗️ Architecture
+| Technology | Purpose |
+|---|---|
+| Java 17 + Selenium 4 | Browser automation |
+| Cucumber 7 (BDD) | Behaviour-driven test scenarios |
+| TestNG | Test execution and parallel control |
+| Docker + Selenium Grid | Containerized cross-browser execution |
+| GitHub Actions | CI/CD — runs without any local setup |
+| Apache POI / CSV | Data-driven test data |
+| Masterthought | Rich HTML test reports |
 
-TestNG + Cucumber
+---
+
+## Project Structure
+
+```
+src/
+└── test/
+    ├── java/com/automation/
+    │   ├── core/
+    │   │   └── DriverManager.java       ← ThreadLocal WebDriver + retry logic
+    │   ├── hooks/
+    │   │   └── Hooks.java               ← Before/After + screenshot on failure
+    │   ├── pages/
+    │   │   └── LoginPage.java           ← Page Object Model (PageFactory)
+    │   ├── runners/
+    │   │   └── TestRunner.java          ← Cucumber + TestNG entry point
+    │   ├── steps/
+    │   │   └── LoginSteps.java          ← BDD step definitions
+    │   └── utils/
+    │       └── ExcelUtils.java          ← CSV test data reader
+    └── resources/
+        ├── features/
+        │   └── login.feature            ← Cucumber BDD scenarios
+        └── testdata/
+            └── login_data.csv           ← Data-driven test inputs
+```
+
+---
+
+## Architecture
+
+```
+GitHub Actions (CI/CD)
         ↓
-Hooks (Before/After)
+Docker Compose
         ↓
-DriverManager (ThreadLocal)
-        ↓
-RemoteWebDriver
-        ↓
-Selenium Grid (Docker Hub + Nodes)
+┌──────────────────────────────┐
+│  chrome-tests container      │    ┌──────────────────────────────┐
+│  mvn verify -Dbrowser=chrome │    │  firefox-tests container     │
+│         ↓                    │    │  mvn verify -Dbrowser=firefox│
+│  TestNG + Cucumber            │    │         ↓                    │
+│  Hooks → DriverManager        │    │  TestNG + Cucumber           │
+│  Page Objects + Steps         │    │  Hooks → DriverManager       │
+│  ExcelUtils (CSV data)        │    │  Page Objects + Steps        │
+└──────────────┬───────────────┘    └──────────────┬───────────────┘
+               │                                    │
+               └──────────────┬─────────────────────┘
+                               ↓
+                    Selenium Grid Hub (4444)
+                    ├── Chrome Node (4.21.0)
+                    └── Firefox Node (4.21.0)
+```
 
-⚙️ Key Features
-✅ 1. Parallel Execution
-Implemented using TestNG + DataProvider
-@Override
-@DataProvider(parallel = true)
-public Object[][] scenarios() {
-    return super.scenarios();
+---
+
+## Key Features
+
+### 1. Zero Local Installation
+All tools (Java, Maven, Selenium Grid, Chrome, Firefox) run inside Docker.
+Only **Git** is required on your local machine.
+
+### 2. Page Object Model
+All locators are in `LoginPage.java` using `PageFactory`.
+Steps reference page objects — no raw locators in test code.
+
+### 3. Hybrid BDD + Data-Driven Framework
+Test scenarios are defined in Cucumber feature files (BDD).
+Test data is read from `login_data.csv` (Data-Driven).
+
+```
+Feature file (BDD)         CSV file (Data-Driven)
+──────────────────         ──────────────────────────────────────────
+Scenario: ValidLogin    →  tomsmith / SuperSecretPassword! / success
+Scenario: InvalidPass   →  tomsmith / wrongpassword         / failure
+Scenario: InvalidUser   →  wronguser / SuperSecretPassword! / failure
+```
+
+To add new test cases — add a row to the CSV and a line in the `Examples` table.
+
+### 4. Screenshot on Failure
+Automatically captures and embeds a screenshot in the HTML report when a scenario fails.
+
+```java
+@After
+public void tearDown(Scenario scenario) {
+    if (scenario.isFailed()) {
+        byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
+        scenario.attach(screenshot, "image/png", "failure-screenshot");
+    }
 }
+```
 
-✅ 2. Thread-Safe Driver (ThreadLocal)
-private static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
+### 5. Session Retry Logic
+`DriverManager` retries session creation up to 5 times with 10s delay if the Grid node is not ready.
 
+### 6. Docker Healthcheck Sequencing
+Hub healthcheck ensures Chrome/Firefox nodes only start after hub is confirmed healthy.
+Prevents `SessionNotCreatedException` caused by race conditions at startup.
 
-Ensures:
+### 7. Parallel Execution
+Chrome and Firefox test containers run **simultaneously** in GitHub Actions (separate jobs).
+Scenarios within each container run in parallel using `@DataProvider(parallel = true)`.
 
-No session conflicts
-Stable parallel execution
+---
 
-✅ 3. Dynamic Browser Selection
-✔ Supports:
-CLI override
-Auto distribution across browsers
-String browser = System.getProperty("browser");
+## Running Tests
 
-if (browser == null) {
-    int index = counter.getAndIncrement() % BROWSERS.length;
-    browser = BROWSERS[index];
-}
+### Via GitHub Actions (Recommended — no local setup needed)
 
-✅ 4. Multi-Browser Execution
+**Manual trigger:**
+1. Go to your GitHub repo → **Actions** tab
+2. Select **Selenium Grid Tests**
+3. Click **Run workflow**
 
-Supports:
+**Download reports:**
+1. Click the completed run
+2. Scroll to **Artifacts**
+3. Download `chrome-reports` or `firefox-reports`
+4. Extract and open `overview-features.html`
 
-Chrome
-Firefox
+### Via Docker locally (requires Docker Desktop)
 
-Runs both browsers in parallel automatically
+```bat
+docker-compose up --build
+```
 
-🐳 Selenium Grid Setup (Docker)
-🔹 Start Grid with Scaling
-docker-compose up --scale chrome=3 --scale firefox=3 -d
+Reports saved to `reports/chrome/` and `reports/firefox/`.
 
-🔹 Verify Containers
-docker ps
+---
 
+## Test Data
 
-Expected:
+Located at `src/test/resources/testdata/login_data.csv`:
 
-3 Chrome nodes
-3 Firefox nodes
-1 Hub
-🔹 Access Grid UI
-http://localhost:4444
+```csv
+TestCaseId,Username,Password,ExpectedResult
+ValidLogin,tomsmith,SuperSecretPassword!,success
+InvalidPassword,tomsmith,wrongpassword,failure
+InvalidUsername,wronguser,SuperSecretPassword!,failure
+```
 
-▶️ Test Execution
-🔹 Run (Auto Browser Distribution)
-mvn clean test -Dexecution=remote
+To add new scenarios:
+1. Add a row to `login_data.csv`
+2. Add a matching line to the `Examples` table in `login.feature`
 
-👉 Runs on:
+---
 
-Chrome + Firefox (parallel)
-🔹 Run Only Chrome
-mvn clean test -Dexecution=remote -Dbrowser=chrome
+## Selenium Grid Setup
 
-🔹 Run Only Firefox
-mvn clean test -Dexecution=remote -Dbrowser=firefox
+| Component | Image | Version |
+|---|---|---|
+| Hub | selenium/hub | 4.21.0 |
+| Chrome Node | selenium/node-chrome | 4.21.0 |
+| Firefox Node | selenium/node-firefox | 4.21.0 |
 
-⚡ Parallel Configuration
-testng.xml
-<suite name="Suite" parallel="methods" thread-count="6">
-    <test name="Test">
-        <classes>
-            <class name="com.automation.runners.TestRunner"/>
-        </classes>
-    </test>
-</suite>
+Grid UI (local): `http://localhost:4444`
 
+---
 
-🧠 Smart Browser Distribution
+## Common Issues & Fixes
 
-Uses Atomic Counter:
+| Issue | Cause | Fix |
+|---|---|---|
+| `SessionNotCreatedException` | Node not registered yet | Retry logic in DriverManager (5×10s) |
+| `TimeoutException` on session | Grid slow to start | Docker healthcheck sequences startup |
+| Report empty / not opening | Tests failed before verify phase | `testFailureIgnore=true` in pom.xml |
+| Only 1 scenario passes | Parallel with 1 node | Sequential execution per container |
 
-private static AtomicInteger counter = new AtomicInteger(0);
-private static final String[] BROWSERS = {"chrome", "firefox"};
+---
 
-Benefits:
-Even load distribution
-No dependency on thread ID
-Predictable execution
+## CI/CD
 
-❗ Common Issues & Fixes
-🔴 Issue: Queue buildup in Grid
+GitHub Actions workflow (`.github/workflows/selenium-tests.yml`):
+- Trigger: **manual only** (`workflow_dispatch`)
+- Runs Chrome and Firefox jobs **in parallel**
+- Uploads HTML reports as downloadable artifacts
+- Reports include pass/fail stats, duration, and screenshots on failure
 
-Cause:
+---
 
-Only one browser used
+## Interview Highlights
 
-Fix:
+- Built portable Selenium Grid using Docker — zero installation on any machine
+- Implemented hybrid BDD + Data-Driven framework (Cucumber + CSV)  
+- Designed Page Object Model with PageFactory for maintainable locators
+- Achieved thread-safe parallel execution with ThreadLocal WebDriver
+- Added automatic screenshot capture on failure embedded in HTML report
+- Implemented session retry logic for flake-resistant Grid connections
+- Set up GitHub Actions CI/CD with artifact-based HTML report delivery
 
-Enable dynamic browser selection
-🔴 Issue: Only 3 sessions running
+---
 
-Cause:
-
-thread-count = 3
-
-Fix:
-
-thread-count="6"
-
-🔴 Issue: SessionNotCreatedException
-
-Cause:
-
-Insufficient nodes
-
-Fix:
-
-docker-compose up --scale chrome=3 --scale firefox=3 -d
-
-🔴 Issue: Invalid Hook Signature
-
-Wrong:
-
-@Before
-public void setUp(ITestContext context)
-
-
-Correct:
-
-@Before
-public void setUp(Scenario scenario)
-
-🧪 Sample Execution Flow
-Test starts
-Hook initializes driver
-Browser assigned dynamically
-Test runs on Grid
-Driver quits after scenario
-
-📊 Expected Grid Behavior
-Metric	Expected
-Nodes	6
-Sessions	6
-Queue	0
-Concurrency	100%
-
-🚀 CI/CD Integration
-Works with Jenkins pipelines
-Supports Docker-based execution
-Easy scaling in CI environments
-
-💡 Future Enhancements
-
-📊 Allure Reporting
-📸 Screenshot on failure
-🔁 Retry mechanism
-🌍 Environment config (QA/UAT)
-🔗 Jenkins parallel stages
-
-
-🧠 Interview Highlights
-You can explain:
-
-Built Selenium Grid using Docker
-Enabled parallel execution with TestNG
-Implemented ThreadLocal WebDriver
-Designed dynamic browser allocation
-Achieved optimal Grid utilization
-👨‍💻 Author
+## Author
 
 Guruvaiya Muthukaruppan
