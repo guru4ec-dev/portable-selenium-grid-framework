@@ -3,30 +3,30 @@ package com.automation.stepdefinitions;
 import io.cucumber.java.en.*;
 
 import com.automation.core.DriverManager;
+import com.automation.pages.LoginPage;
 
-import org.openqa.selenium.*;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 
 public class LoginSteps {
 
-WebDriver driver = DriverManager.getDriver();
-
     @Given("user is on login page")
     public void openLoginPage() {
-        driver.get("https://the-internet.herokuapp.com/login");
-
+        LoginPage loginPage = new LoginPage(DriverManager.getDriver());
+        loginPage.open();
     }
 
-    @When("user enters username and password")
-    public void enterCredentials() {
-        driver.findElement(By.id("username")).sendKeys("tomsmith");
-        driver.findElement(By.id("password")).sendKeys("SuperSecretPassword!");
-        driver.findElement(By.cssSelector("button[type='submit']")).click();
+    @When("user enters {string} and {string}")
+    public void enterCredentials(String username, String password) {
+        LoginPage loginPage = new LoginPage(DriverManager.getDriver());
+        loginPage.login(username, password);
     }
 
     @Then("user should land on dashboard")
     public void verifyDashboard() {
-        System.out.println("Login successful");
-        DriverManager.quitDriver();
+        LoginPage loginPage = new LoginPage(DriverManager.getDriver());
+        String currentUrl = loginPage.getCurrentUrl();
+        Assert.assertTrue(currentUrl.contains("/secure"),
+                "Expected dashboard URL to contain '/secure' but got: " + currentUrl);
+        System.out.println("Login successful - URL: " + currentUrl);
     }
 }
