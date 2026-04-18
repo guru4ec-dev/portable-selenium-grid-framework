@@ -1,4 +1,4 @@
-package com.automation.stepdefinitions;
+package com.automation.steps;
 
 import io.cucumber.java.en.*;
 

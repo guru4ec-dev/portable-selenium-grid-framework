@@ -2,8 +2,6 @@ name: Selenium Grid Tests
 
 on:
   workflow_dispatch:
-  push:
-    branches: [ main ]
 
 jobs:
 
