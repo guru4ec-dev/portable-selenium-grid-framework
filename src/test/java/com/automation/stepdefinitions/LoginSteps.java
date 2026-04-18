@@ -12,8 +12,7 @@ import java.util.Map;
 
 public class LoginSteps {
 
-    private static final String DATA_FILE = "testdata/login_data.xlsx";
-    private static final String SHEET     = "LoginTests";
+    private static final String DATA_FILE = "testdata/login_data.csv";
 
     @Given("user is on login page")
     public void openLoginPage() {
@@ -22,7 +21,7 @@ public class LoginSteps {
 
     @When("user logs in with test case {string}")
     public void loginWithTestCase(String testCaseId) {
-        Map<String, String> data = ExcelUtils.getTestDataById(DATA_FILE, SHEET, testCaseId);
+        Map<String, String> data = ExcelUtils.getTestDataById(DATA_FILE, testCaseId);
         String username = data.get("Username");
         String password = data.get("Password");
         System.out.println("[DataDriven] TestCase: " + testCaseId +

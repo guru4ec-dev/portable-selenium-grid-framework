@@ -1,16 +1,53 @@
 package com.automation.utils;
 
-import org.apache.poi.ss.usermodel.*;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-
 import java.io.*;
-import java.net.URL;
-import java.util.ArrayList;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class ExcelUtils {
+
+    /**
+     * Reads all rows from a CSV file in src/test/resources/.
+     * Returns a list of maps where key = column header, value = cell value.
+     */
+    public static List<Map<String, String>> getTestData(String fileName) {
+        List<Map<String, String>> data = new ArrayList<>();
+
+        try (InputStream is = ExcelUtils.class.getClassLoader().getResourceAsStream(fileName)) {
+            if (is == null) throw new RuntimeException("Test data file not found: " + fileName);
+
+            BufferedReader reader = new BufferedReader(new InputStreamReader(is));
+            String headerLine = reader.readLine();
+            if (headerLine == null) return data;
+
+            String[] headers = headerLine.split(",");
+            String line;
+            while ((line = reader.readLine()) != null) {
+                if (line.trim().isEmpty()) continue;
+                String[] values = line.split(",", -1);
+                Map<String, String> row = new LinkedHashMap<>();
+                for (int i = 0; i < headers.length; i++) {
+                    row.put(headers[i].trim(), i < values.length ? values[i].trim() : "");
+                }
+                data.add(row);
+            }
+        } catch (Exception e) {
+            throw new RuntimeException("Failed to read test data file: " + fileName, e);
+        }
+
+        return data;
+    }
+
+    /**
+     * Finds a single row matching the given testCaseId.
+     */
+    public static Map<String, String> getTestDataById(String fileName, String testCaseId) {
+        return getTestData(fileName).stream()
+                .filter(row -> testCaseId.equals(row.get("TestCaseId")))
+                .findFirst()
+                .orElseThrow(() -> new RuntimeException("Test case not found: " + testCaseId));
+    }
+}
+
 
     /**
      * Reads all rows from the given sheet in the Excel file located in src/test/resources/.

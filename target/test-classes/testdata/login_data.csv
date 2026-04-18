@@ -1,0 +1,4 @@
+TestCaseId,Username,Password,ExpectedResult
+ValidLogin,tomsmith,SuperSecretPassword!,success
+InvalidPassword,tomsmith,wrongpassword,failure
+InvalidUsername,wronguser,SuperSecretPassword!,failure
