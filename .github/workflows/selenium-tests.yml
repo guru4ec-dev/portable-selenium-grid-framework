@@ -17,12 +17,19 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Create Reports Directory
-        run: mkdir -p reports
+        run: |
+          mkdir -p reports/chrome/html-reports reports/chrome/surefire-reports
+          chmod -R 777 reports
 
       - name: Run Chrome Tests
         run: docker compose up --build --abort-on-container-exit --exit-code-from chrome-tests chrome-tests
 
+      - name: Fix Report Permissions
+        if: always()
+        run: sudo chown -R $USER:$USER reports/ || true
+
       - name: Debug Reports Folder
+        if: always()
         run: |
           echo "Listing reports folder..."
           ls -R reports || true
@@ -33,6 +40,7 @@ jobs:
         with:
           name: chrome-reports
           path: reports/
+          if-no-files-found: warn
 
       - name: Stop Containers
         if: always()
@@ -47,12 +55,19 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Create Reports Directory
-        run: mkdir -p reports
+        run: |
+          mkdir -p reports/firefox/html-reports reports/firefox/surefire-reports
+          chmod -R 777 reports
 
       - name: Run Firefox Tests
         run: docker compose up --build --abort-on-container-exit --exit-code-from firefox-tests firefox-tests
 
+      - name: Fix Report Permissions
+        if: always()
+        run: sudo chown -R $USER:$USER reports/ || true
+
       - name: Debug Reports Folder
+        if: always()
         run: |
           echo "Listing reports folder..."
           ls -R reports || true
@@ -63,6 +78,7 @@ jobs:
         with:
           name: firefox-reports
           path: reports/
+          if-no-files-found: warn
 
       - name: Stop Containers
         if: always()

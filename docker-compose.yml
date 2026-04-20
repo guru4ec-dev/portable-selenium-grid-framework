@@ -53,7 +53,8 @@ services:
       - GRID_URL=http://selenium-hub:4444
     command: sleep 10 && mvn verify -Dbrowser=chrome -Dscreenshot.mode=step-all -Dsurefire.suiteXmlFiles=testng.xml -DlogLevel=INFO
     volumes:
-      - ./reports/chrome:/app/target/cucumber-html-reports
+      - ./reports/chrome/html-reports:/app/target/cucumber-html-reports
+      - ./reports/chrome/surefire-reports:/app/target/surefire-reports
 
   firefox-tests:
     build: .
@@ -66,4 +67,5 @@ services:
       - GRID_URL=http://selenium-hub:4444
     command: sleep 10 && mvn verify -Dbrowser=firefox -Dscreenshot.mode=step-all -Dsurefire.suiteXmlFiles=testng.xml -DlogLevel=INFO
     volumes:
-      - ./reports/firefox:/app/target/cucumber-html-reports
+      - ./reports/firefox/html-reports:/app/target/cucumber-html-reports
+      - ./reports/firefox/surefire-reports:/app/target/surefire-reports
