@@ -26,21 +26,29 @@ jobs:
       - name: Debug Container State
         if: always()
         run: |
-          echo "=== Container list ==="
+          echo "=== All containers ==="
           docker ps -a
-          echo "=== Files inside chrome-tests container ==="
-          docker exec chrome-tests ls -R /app/target/ 2>/dev/null || \
-            docker start chrome-tests 2>/dev/null && docker exec chrome-tests ls -R /app/target/ 2>/dev/null || \
-            echo "Cannot exec into container, trying docker cp directly"
+          CID=$(docker compose ps -a -q chrome-tests)
+          echo "=== chrome-tests container ID: $CID ==="
+          if [ -n "$CID" ]; then
+            echo "=== Files inside container ==="
+            docker cp $CID:/app/target /tmp/_target_debug && ls -R /tmp/_target_debug || echo "No target dir"
+          fi
 
       - name: Copy Reports from Container
         if: always()
         run: |
           mkdir -p reports/chrome
-          docker cp chrome-tests:/app/target/surefire-reports ./reports/chrome/surefire-reports || echo "WARN: surefire-reports not found"
-          docker cp chrome-tests:/app/target/cucumber-html-reports ./reports/chrome/cucumber-html-reports || echo "WARN: cucumber-html-reports not found"
-          docker cp chrome-tests:/app/target/cucumber-report.html ./reports/chrome/cucumber-report.html || echo "WARN: cucumber-report.html not found"
-          docker cp chrome-tests:/app/target/cucumber.json ./reports/chrome/cucumber.json || echo "WARN: cucumber.json not found"
+          CID=$(docker compose ps -a -q chrome-tests)
+          echo "Container ID: $CID"
+          if [ -n "$CID" ]; then
+            docker cp $CID:/app/target/surefire-reports ./reports/chrome/surefire-reports || echo "WARN: surefire-reports not found"
+            docker cp $CID:/app/target/cucumber-html-reports ./reports/chrome/cucumber-html-reports || echo "WARN: cucumber-html-reports not found"
+            docker cp $CID:/app/target/cucumber-report.html ./reports/chrome/cucumber-report.html || echo "WARN: cucumber-report.html not found"
+            docker cp $CID:/app/target/cucumber.json ./reports/chrome/cucumber.json || echo "WARN: cucumber.json not found"
+          else
+            echo "ERROR: chrome-tests container not found!"
+          fi
 
       - name: Debug Reports Folder
         if: always()
@@ -75,21 +83,29 @@ jobs:
       - name: Debug Container State
         if: always()
         run: |
-          echo "=== Container list ==="
+          echo "=== All containers ==="
           docker ps -a
-          echo "=== Files inside firefox-tests container ==="
-          docker exec firefox-tests ls -R /app/target/ 2>/dev/null || \
-            docker start firefox-tests 2>/dev/null && docker exec firefox-tests ls -R /app/target/ 2>/dev/null || \
-            echo "Cannot exec into container, trying docker cp directly"
+          CID=$(docker compose ps -a -q firefox-tests)
+          echo "=== firefox-tests container ID: $CID ==="
+          if [ -n "$CID" ]; then
+            echo "=== Files inside container ==="
+            docker cp $CID:/app/target /tmp/_target_debug && ls -R /tmp/_target_debug || echo "No target dir"
+          fi
 
       - name: Copy Reports from Container
         if: always()
         run: |
           mkdir -p reports/firefox
-          docker cp firefox-tests:/app/target/surefire-reports ./reports/firefox/surefire-reports || echo "WARN: surefire-reports not found"
-          docker cp firefox-tests:/app/target/cucumber-html-reports ./reports/firefox/cucumber-html-reports || echo "WARN: cucumber-html-reports not found"
-          docker cp firefox-tests:/app/target/cucumber-report.html ./reports/firefox/cucumber-report.html || echo "WARN: cucumber-report.html not found"
-          docker cp firefox-tests:/app/target/cucumber.json ./reports/firefox/cucumber.json || echo "WARN: cucumber.json not found"
+          CID=$(docker compose ps -a -q firefox-tests)
+          echo "Container ID: $CID"
+          if [ -n "$CID" ]; then
+            docker cp $CID:/app/target/surefire-reports ./reports/firefox/surefire-reports || echo "WARN: surefire-reports not found"
+            docker cp $CID:/app/target/cucumber-html-reports ./reports/firefox/cucumber-html-reports || echo "WARN: cucumber-html-reports not found"
+            docker cp $CID:/app/target/cucumber-report.html ./reports/firefox/cucumber-report.html || echo "WARN: cucumber-report.html not found"
+            docker cp $CID:/app/target/cucumber.json ./reports/firefox/cucumber.json || echo "WARN: cucumber.json not found"
+          else
+            echo "ERROR: firefox-tests container not found!"
+          fi
 
       - name: Debug Reports Folder
         if: always()

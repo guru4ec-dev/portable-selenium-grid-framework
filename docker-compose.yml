@@ -44,7 +44,6 @@ services:
 
   chrome-tests:
     build: .
-    container_name: chrome-tests
     depends_on:
       selenium-hub:
         condition: service_healthy
@@ -56,7 +55,6 @@ services:
 
   firefox-tests:
     build: .
-    container_name: firefox-tests
     depends_on:
       selenium-hub:
         condition: service_healthy
