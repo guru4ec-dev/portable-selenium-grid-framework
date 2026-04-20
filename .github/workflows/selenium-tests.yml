@@ -56,12 +56,19 @@ jobs:
           echo "Listing reports folder..."
           ls -R reports || true
 
+      - name: Ensure Chrome Reports Folder Has Content
+        if: always()
+        run: |
+          if [ -z "$(find reports/chrome -type f 2>/dev/null)" ]; then
+            echo "No test reports were generated for Chrome." > reports/chrome/no-reports.txt
+          fi
+
       - name: Upload Chrome Reports
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: chrome-reports
-          path: reports/
+          path: reports/chrome/
           if-no-files-found: warn
 
       - name: Stop Containers
@@ -113,12 +120,19 @@ jobs:
           echo "Listing reports folder..."
           ls -R reports || true
 
+      - name: Ensure Firefox Reports Folder Has Content
+        if: always()
+        run: |
+          if [ -z "$(find reports/firefox -type f 2>/dev/null)" ]; then
+            echo "No test reports were generated for Firefox." > reports/firefox/no-reports.txt
+          fi
+
       - name: Upload Firefox Reports
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: firefox-reports
-          path: reports/
+          path: reports/firefox/
           if-no-files-found: warn
 
       - name: Stop Containers
