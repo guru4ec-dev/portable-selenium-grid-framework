@@ -51,7 +51,8 @@ services:
         condition: service_started
     environment:
       - GRID_URL=http://selenium-hub:4444
-    command: sleep 10 && mvn verify -Dbrowser=chrome -Dscreenshot.mode=step-all -Dsurefire.suiteXmlFiles=testng.xml -DlogLevel=INFO
+    entrypoint: ["/bin/sh", "-c"]
+    command: "sleep 10 && mvn verify -Dbrowser=chrome -Dscreenshot.mode=step-all -Dsurefire.suiteXmlFiles=testng.xml -DlogLevel=INFO"
 
   firefox-tests:
     build: .
@@ -62,4 +63,5 @@ services:
         condition: service_started
     environment:
       - GRID_URL=http://selenium-hub:4444
-    command: sleep 10 && mvn verify -Dbrowser=firefox -Dscreenshot.mode=step-all -Dsurefire.suiteXmlFiles=testng.xml -DlogLevel=INFO
+    entrypoint: ["/bin/sh", "-c"]
+    command: "sleep 10 && mvn verify -Dbrowser=firefox -Dscreenshot.mode=step-all -Dsurefire.suiteXmlFiles=testng.xml -DlogLevel=INFO"
