@@ -9,6 +9,7 @@ on:
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+  NODE_NO_WARNINGS: "1"
 
 jobs:
 
@@ -31,6 +32,8 @@ jobs:
           CID=$(docker compose ps -a -q chrome-tests)
           echo "=== chrome-tests container ID: $CID ==="
           if [ -n "$CID" ]; then
+            echo "=== Container logs ==="
+            docker logs $CID
             echo "=== Files inside container ==="
             docker cp $CID:/app/target /tmp/_target_debug && ls -R /tmp/_target_debug || echo "No target dir"
           fi
@@ -42,10 +45,7 @@ jobs:
           CID=$(docker compose ps -a -q chrome-tests)
           echo "Container ID: $CID"
           if [ -n "$CID" ]; then
-            docker cp $CID:/app/target/surefire-reports ./reports/chrome/surefire-reports || echo "WARN: surefire-reports not found"
-            docker cp $CID:/app/target/cucumber-html-reports ./reports/chrome/cucumber-html-reports || echo "WARN: cucumber-html-reports not found"
-            docker cp $CID:/app/target/cucumber-report.html ./reports/chrome/cucumber-report.html || echo "WARN: cucumber-report.html not found"
-            docker cp $CID:/app/target/cucumber.json ./reports/chrome/cucumber.json || echo "WARN: cucumber.json not found"
+            docker cp $CID:/app/target/. ./reports/chrome/ || echo "WARN: target directory not found in container"
           else
             echo "ERROR: chrome-tests container not found!"
           fi
@@ -95,6 +95,8 @@ jobs:
           CID=$(docker compose ps -a -q firefox-tests)
           echo "=== firefox-tests container ID: $CID ==="
           if [ -n "$CID" ]; then
+            echo "=== Container logs ==="
+            docker logs $CID
             echo "=== Files inside container ==="
             docker cp $CID:/app/target /tmp/_target_debug && ls -R /tmp/_target_debug || echo "No target dir"
           fi
@@ -106,10 +108,7 @@ jobs:
           CID=$(docker compose ps -a -q firefox-tests)
           echo "Container ID: $CID"
           if [ -n "$CID" ]; then
-            docker cp $CID:/app/target/surefire-reports ./reports/firefox/surefire-reports || echo "WARN: surefire-reports not found"
-            docker cp $CID:/app/target/cucumber-html-reports ./reports/firefox/cucumber-html-reports || echo "WARN: cucumber-html-reports not found"
-            docker cp $CID:/app/target/cucumber-report.html ./reports/firefox/cucumber-report.html || echo "WARN: cucumber-report.html not found"
-            docker cp $CID:/app/target/cucumber.json ./reports/firefox/cucumber.json || echo "WARN: cucumber.json not found"
+            docker cp $CID:/app/target/. ./reports/firefox/ || echo "WARN: target directory not found in container"
           else
             echo "ERROR: firefox-tests container not found!"
           fi
