@@ -1,3 +1,9 @@
+# Personal resume and cover letter files
+*.docx
+*.pdf
+*.pages
+*.doc
+
 # Maven build output
 target/
 
