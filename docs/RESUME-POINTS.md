@@ -1,3 +1,33 @@
+Automation Architect | Senior SDET | Tata Consultancy Services
+  Jan 2024 – Present • Chennai, India
+
+  Enterprise test automation delivery for Allianz (global insurance leader) — designing and scaling
+  automation infrastructure across web and API platforms.
+
+  • Reduced UI regression runtime by 75% (4 hours → 1 hour) by architecting Dockerized Selenium Grid 4
+  framework with parallel Chrome/Firefox execution, ThreadLocal-based thread-safe WebDriver management,
+  and API-layer test state setup
+
+  • Built enterprise BDD framework from scratch using Cucumber + Selenium + TestNG + Jenkins, mapping
+  critical insurance and claims flows with hybrid data-driven approach (Excel/Apache POI) enabling
+  business analysts to author 47+ test scenarios
+
+  • Shifted API testing left with REST Assured, Postman collections, and Swagger contract validation —
+  detecting backend defects pre-sprint and reducing integration bugs by 40%
+
+  • Solved production Selenium challenges: dynamic elements, iFrames, popups, AJAX synchronization, and
+  cross-browser flakiness through explicit waits and quarantine protocols — improving Grid reliability
+  from 60% to 97%
+
+  • Integrated CI/CD quality gates across Jenkins and GitHub Actions with parallel execution, automated
+  reporting, and mandatory PR checks — supporting 100+ daily test runs with 60% reduction in
+  false-failure alerts
+
+  • Mentored 5 QA engineers on automation best practices and Page Object patterns, reducing onboarding
+  from 12 weeks to 8 weeks while leading framework adoption across 8 teams with 97% infrastructure
+  reliability
+  
+
 # Resume Points - Portable Selenium Grid Framework
 
 ## For Senior QA Automation Engineer / SDET Role
