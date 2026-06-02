@@ -307,3 +307,107 @@ A: Graduated autonomy - start with pair programming (I do/you watch), move to gu
 
 **Last Updated:** June 2026
 **Project Repository:** https://github.com/guru4ec-dev/portable-selenium-grid-framework
+
+
+
+
+GURUVAIYA MUTHUKARUPPAN
+
+Senior SDET | Automation Architect | Java | Selenium | Docker | CI/CD
+
+Chennai, India | Open to Remote | +91 6381034340 | guru4ec@gmail.com | linkedin.com/in/guruvaiya-m
+PROFESSIONAL PROFILE
+19+ years automating enterprise QA across Insurance, Banking, Retail, Telecom, and Supply Chain. Architect of
+Selenium Grid frameworks adopted by Fortune 500 companies (Home Depot, Allianz) and global tech firms
+(JPMorgan Chase, Bank of America). Proven track record: 75% regression runtime reduction, 40% integration
+bug reduction, 97% Grid reliability. Remote-ready with 9+ years international on-site delivery (USA, Australia).
+CORE SKILLS
+Java | Selenium WebDriver | Selenium Grid 4 | Cucumber BDD | TestNG | REST Assured | Postman | Swagger |
+Docker | Jenkins | GitHub Actions | Maven | JIRA | Xray | Zephyr | Apache POI | Page Object Model |
+
+ThreadLocal WebDriver | Parallel Execution | Cross-browser Testing | API Testing | Data-Driven Testing | Shift-
+Left Testing | Agile/Scrum
+
+PROFESSIONAL EXPERIENCE
+Automation Architect | Senior SDET | Tata Consultancy Services
+Jan 2024 – Present | Chennai, India
+Allianz (Global Insurance Leader) — Web & API automation at enterprise scale
+ Architected Dockerized Selenium Grid 4 framework with ThreadLocal-based thread-safe WebDriver
+management, parallel Chrome/Firefox execution, and healthcheck-based orchestration — eliminated 100%
+first-run failures
+ Reduced UI regression runtime by 75% (4 hours → 1 hour) through 3-layer parallelism: parallel browser jobs,
+TestNG parallel scenarios (thread-count=3), and dual Grid node scaling (6 concurrent sessions)
+ Built enterprise BDD framework from scratch using Cucumber + Selenium + TestNG + Jenkins with hybrid
+data-driven approach (Excel/Apache POI) — enabling 47+ test scenarios authored by business analysts
+without coding
+ Shifted API testing left using REST Assured, Postman collections, and Swagger contract validation — detected
+backend defects pre-sprint and reduced integration bugs by 40%
+
+ Solved production Selenium challenges: dynamic elements, iFrames, popups, AJAX synchronization, cross-
+browser flakiness through explicit waits and quarantine protocols — improved Grid reliability from 60% to
+
+97%
+ Integrated CI/CD quality gates across Jenkins and GitHub Actions with parallel execution, automated
+reporting, and mandatory PR checks — supporting 100+ daily test runs with 60% false-failure alert reduction
+ Mentored 5 QA engineers on automation best practices and Page Object patterns — reduced onboarding
+from 12 weeks to 8 weeks while driving framework adoption across 8 teams with 97% infrastructure
+reliability
+Automation Test Manager | Tata Consultancy Services
+Jan 2019 – Nov 2023 | Atlanta, USA (On-site)
+Home Depot (Fortune 500) — E-commerce and supply chain automation
+ Owned end-to-end automation architecture for critical user journeys: Cucumber BDD framework, step
+definitions for checkout/cart/inventory flows, coverage standards across multiple squads
+ Developed organization-wide automation strategy and roadmap — aligned tools, platforms, and delivery
+across concurrent product streams serving high-traffic e-commerce platform
+
+ Built regression suites covering critical purchase, cart, and inventory management journeys at Fortune 500
+scale
+ Managed, mentored, and upskilled cross-functional SDET teams through code reviews and best-practice
+coaching — consistently delivered high-quality releases on schedule
+ Drove CI/CD maturity by embedding automated regression quality gates into pipeline — prevented
+production escapes and accelerated release cadence
+Automation Test Lead | Tata Consultancy Services
+Nov 2015 – Nov 2018 | Sydney, Australia (On-site)
+Commonwealth Bank (CBA) — Financial Crime, Future Advice Model, Customer Engagement Platform
+ Engineered compliance-grade test automation for Financial Crime & Sanctions platform
+(Fircosoft/SWIFT/NPP) — achieved zero compliance-related production incidents
+ Built BDD automation suites for Future Advice Model (FAM) covering regression for platform serving
+thousands of financial advisers across Australia
+ Delivered automation for Customer Engagement Platform (CEP) with backend SQL integration — caught
+data-sync defects invisible to manual testing
+ Managed defect lifecycle from discovery to closure across dev, SIT, and UAT environments
+Automation Test Lead | Tata Consultancy Services
+Jan 2015 – Oct 2015 | Sydney, Australia (On-site)
+Vodafone Australia — ATG/AWS e-commerce platform
+ Designed and developed Selenium WebDriver + Java automation — enabled fortnightly releases previously
+blocked by manual regression
+ Executed end-to-end coverage across purchase, plan upgrade, and account management journeys
+ Managed automation testing team and served as liaison between dev, BA, and QA leadership
+Senior Automation Engineer — TCS Automation CoE | Tata Consultancy Services
+May 2011 – Dec 2014 | Chennai, India
+TCS Centre of Excellence — Framework development and strategy
+ Co-developed RAFT, TAM, and eRAFT automation frameworks (tool-agnostic, OOP-based) adopted by
+JPMorgan Chase, Bank of America, Nielsen, Nationwide, and Humana across TCS accounts globally
+
+ Conducted PoC engagements and feasibility studies across 6 industry verticals: Banking, Retail, Insurance, E-
+commerce, Healthcare, Travel
+
+ Led in-house training programs and served as primary vendor liaison for framework tools — reduced
+framework-related blockers for client teams
+ Performed automation effort estimation, ROI calculations, and roadmap definition for enterprise clients
+Automation QA Engineer | Softeon India Pvt Ltd
+2006 – 2011 | Chennai, India
+Softeon SCflex — Enterprise Supply Chain Management (J2EE, SOA, web-based)
+ Developed Selenium automation test suites for Warehouse, Transportation, Yard, Order, and Parcel
+Management modules
+ Delivered QA for US enterprise clients: SONY, Ben E. Keith, Network Global Logistics
+ Validated critical ERP and EDI integrations with multi-format reporting (PDF, HTML, Excel)
+ Ensured cross-browser compatibility and platform independence for J2EE, database-independent enterprise
+application
+RECOGNITION & AWARDS
+ Multiple client appreciation awards for outstanding automation delivery
+
+ Recognized for rapid turnaround on critical production issues
+ Multiple 'On the Spot' awards for remarkable contributions to project delivery (TCS)
+EDUCATION
+ B.Tech — Electronics Engineering | MIT, Anna University | 2005
