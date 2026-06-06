@@ -1,36 +1,80 @@
-# Selenium Grid Automation Framework
-## Docker + Parallel + Multi-Browser + BDD + Data-Driven
+# Portable Selenium Grid Framework
+
+> **Enterprise-grade test automation — zero local setup, runs entirely in CI/CD.**
+> Built by [Guruvaiya Muthukaruppan](https://linkedin.com/in/guruvaiya-m) — Automation Architect with 19+ years delivering QA frameworks for Fortune 500 firms.
+
+![Java](https://img.shields.io/badge/Java-17-orange?style=flat-square)
+![Selenium](https://img.shields.io/badge/Selenium-4-green?style=flat-square)
+![Cucumber](https://img.shields.io/badge/Cucumber-BDD-brightgreen?style=flat-square)
+![Docker](https://img.shields.io/badge/Docker-Grid-blue?style=flat-square)
+![CI](https://img.shields.io/badge/CI-GitHub_Actions-black?style=flat-square)
 
 ---
 
-## Overview
+## What this framework solves
 
-A portable, scalable Selenium automation framework with zero local installation required.
-Tests run entirely in the cloud via **GitHub Actions** — just push code and download reports.
+Most Selenium Grid setups require local browser installation, manual Grid configuration, and environment-specific setup steps — creating flaky runs and slow onboarding.
 
-| Technology | Purpose |
+This framework eliminates all of that:
+
+- **Zero local installation** — only Git required; Docker handles everything else
+- **Push-to-run CI/CD** — GitHub Actions triggers full cross-browser regression on every commit
+- **Parallel Chrome + Firefox** — simultaneous execution cuts regression runtime significantly
+- **Flake-resistant** — session retry logic (5 × 10s) and Docker healthcheck sequencing prevent race conditions
+- **Business-readable tests** — Cucumber BDD feature files authored without writing code
+
+---
+
+## Tech stack
+
+| Layer | Technology | Why |
+|---|---|---|
+| Browser automation | Java 17 + Selenium 4 | Industry standard, thread-safe WebDriver |
+| BDD scenarios | Cucumber 7 | Business-readable; no-code test authoring for BAs |
+| Execution control | TestNG | Parallel execution and suite management |
+| Grid infrastructure | Docker + Selenium Grid 4 | Portable, containerised, zero-install |
+| CI/CD pipeline | GitHub Actions | Runs on every push; artifacts auto-published |
+| Test data | Apache POI (Excel) | Data-driven — one sheet per feature |
+| Reporting | Masterthought | Rich HTML reports with screenshots |
+
+---
+
+## Architecture
+
+```
+GitHub Actions (CI/CD trigger on push)
+        ↓
+Docker Compose
+        ↓
+┌─────────────────────────┐    ┌─────────────────────────┐
+│  chrome-tests container  │    │  firefox-tests container │
+│  mvn verify -Dbrowser=  │    │  mvn verify -Dbrowser=  │
+│  chrome                  │    │  firefox                 │
+│  TestNG + Cucumber        │    │  TestNG + Cucumber       │
+│  Hooks → DriverManager   │    │  Hooks → DriverManager   │
+│  Page Objects + Steps    │    │  Page Objects + Steps    │
+└──────────┬──────────────┘    └──────────┬───────────────┘
+           └──────────────┬───────────────┘
+                          ↓
+               Selenium Grid Hub (:4444)
+               ├── Chrome Node (4.21.0)
+               └── Firefox Node (4.21.0)
+```
+
+**Layer responsibilities:**
+
+| Layer | Responsibility |
 |---|---|
-| Java 17 + Selenium 4 | Browser automation |
-| Cucumber 7 (BDD) | Behaviour-driven test scenarios |
-| TestNG | Test execution and parallel control |
-| Docker + Selenium Grid | Containerized cross-browser execution |
-| GitHub Actions | CI/CD — runs without any local setup |
-| Apache POI | Data-driven test data (Excel) |
-| Masterthought | Rich HTML test reports |
+| `feature` files | What to test — business language readable by BA/QA |
+| `Steps` classes | How to test — reads Excel data, calls Page methods |
+| `Page` classes | Page actions — open, login, getFlashMessage |
+| `BasePage` | Reusable Selenium keywords — type, click, getText, isDisplayed |
+| `locators.properties` | All element locators centralised in one place |
+| `testdata.xlsx` | All test data — one sheet per feature |
 
 ---
 
-## Guides
-
-| Guide | Contents |
-|---|---|
-| [Running Tests](docs/RUNNING-TESTS.md) | GitHub Actions, Docker local, screenshot modes, parallel scaling, CI/CD |
-| [Developer Guide](docs/DEVELOPER-GUIDE.md) | Adding features — 5-step walkthrough, scaffold script, locators, test data |
-| [Troubleshooting](docs/TROUBLESHOOTING.md) | Common errors, Grid setup, Docker logs |
-
----
-
-## Project Structure
+## Project structure
 
 ```
 src/
@@ -48,7 +92,7 @@ src/
     │   │   └── LoginSteps.java          ← BDD step definitions
     │   └── utils/
     │       ├── ExcelUtils.java          ← Excel test data reader (Apache POI)
-    │       └── ObjectRepository.java   ← Loads locators from locators.properties
+    │       └── ObjectRepository.java    ← Loads locators from locators.properties
     └── resources/
         ├── features/
         │   └── login.feature            ← Cucumber BDD scenarios
@@ -59,68 +103,36 @@ src/
 
 ---
 
-## Architecture
+## Key engineering decisions
 
-```
-GitHub Actions (CI/CD)
-        ↓
-Docker Compose
-        ↓
-┌──────────────────────────────┐
-│  chrome-tests container      │    ┌──────────────────────────────┐
-│  mvn verify -Dbrowser=chrome │    │  firefox-tests container     │
-│         ↓                    │    │  mvn verify -Dbrowser=firefox│
-│  TestNG + Cucumber            │    │         ↓                    │
-│  Hooks → DriverManager        │    │  TestNG + Cucumber           │
-│  Page Objects + Steps         │    │  Hooks → DriverManager       │
-│  ExcelUtils (xlsx data)       │    │  Page Objects + Steps        │
-└──────────────┬───────────────┘    └──────────────┬───────────────┘
-               │                                    │
-               └──────────────┬─────────────────────┘
-                               ↓
-                    Selenium Grid Hub (4444)
-                    ├── Chrome Node (4.21.0)
-                    └── Firefox Node (4.21.0)
-```
+**ThreadLocal WebDriver** — ensures thread safety during parallel execution; no shared state between test threads.
 
-**Layer responsibilities:**
+**Object Repository pattern** — all locators externalised to `locators.properties`; zero code changes needed when UI elements change.
 
-```
-feature file          → What to test (business language — readable by BA/QA)
-Steps class           → How to test (reads CSV, calls Page methods)
-Page class            → Page actions (open, login, getFlashMessage)
-BasePage              → Reusable Selenium keywords (type, click, getText...)
-locators.properties   → All element locators in one place
-testdata.xlsx         → All test data, one sheet per feature
-```
+**Configurable screenshot modes** — `failure` / `step-all` / `step-failed` via `-Dscreenshot.mode`; balances debug visibility vs report size.
+
+**Docker healthcheck sequencing** — Grid Hub must be healthy before nodes register; nodes must be ready before tests execute. Prevents the most common source of CI flakiness.
+
+**Session retry logic** — 5 retries × 10s intervals for Grid connections; handles transient startup delays without failing the suite.
 
 ---
 
-## Key Features
+## Running tests
 
-- **Zero local installation** — only Git needed; everything else runs in Docker
-- **Hybrid BDD + Data-Driven** — Cucumber feature files with Excel test data (one sheet per feature)
-- **Page Object Model** — `BasePage` keyword-driven actions (`type`, `click`, `getText`, `open`, `isDisplayed`)
-- **Object Repository** — all locators centralised in `locators.properties`
-- **Configurable screenshots** — `failure` / `step-all` / `step-failed` via `-Dscreenshot.mode`
-- **Session retry logic** — 5 retries × 10s for flake-resistant Grid connections
-- **Docker healthcheck sequencing** — prevents race conditions at Grid startup
-- **Parallel execution** — Chrome + Firefox simultaneously; scenarios parallel within each job
+| Guide | Contents |
+|---|---|
+| [Running Tests](docs/RUNNING-TESTS.md) | GitHub Actions, Docker local, screenshot modes, parallel scaling |
+| [Developer Guide](docs/DEVELOPER-GUIDE.md) | Adding features — 5-step walkthrough, scaffold script, locators, test data |
+| [Troubleshooting](docs/TROUBLESHOOTING.md) | Common errors, Grid setup, Docker logs |
 
 ---
 
-## Interview Highlights
+## About the author
 
-- Built portable Selenium Grid using Docker — zero installation on any machine
-- Implemented hybrid BDD + Data-Driven framework (Cucumber + CSV)  
-- Designed Page Object Model with PageFactory for maintainable locators
-- Achieved thread-safe parallel execution with ThreadLocal WebDriver
-- Configurable screenshot capture: per-scenario failure, per-step (all), or per-step (failed only)
-- Implemented session retry logic for flake-resistant Grid connections
-- Set up GitHub Actions CI/CD with artifact-based HTML report delivery
+**Guruvaiya Muthukaruppan** — Automation Architect and Senior SDET with 19+ years building enterprise QA frameworks across Insurance, Banking, Retail, and Telecom.
 
----
+Previously delivered automation at scale for Allianz, Home Depot (Fortune 500), Commonwealth Bank of Australia, and Vodafone. Co-developed the RAFT, TAM, and eRAFT frameworks adopted globally by JPMorgan Chase, Bank of America, and Humana at the TCS Centre of Excellence.
 
-## Author
-
-Guruvaiya Muthukaruppan
+- 🔗 [LinkedIn](https://linkedin.com/in/guruvaiya-m)
+- 💻 [GitHub](https://github.com/guru4ec-dev)
+- 📧 guru4ec@gmail.com
